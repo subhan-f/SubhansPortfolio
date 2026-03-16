@@ -95,15 +95,14 @@ This is a personal project and is not open for direct contributions. However, if
 
 ## Contact
 
-- **Name:** Subhan
-- **Email:** [subhanfarrakh5@gmail.com]
-- **LinkedIn:** [https://linkedin.com/in/subhanf](LinkedIn)
+- **Email:** [subhanfarrakh5@gmail.com](mailto:subhanfarrakh5@gmail.com)
+- **LinkedIn:** [subhanf](https://linkedin.com/in/subhanf)
 - **Twitter:** [@subhanf]
-- **Portfolio:** [subhanfarrakh.com]
+- **Portfolio:** [subhanfarrakh.com](subhanfarrakh.com)
 
 ## License
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ---
 
