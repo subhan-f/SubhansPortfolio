@@ -96,10 +96,10 @@ This is a personal project and is not open for direct contributions. However, if
 ## Contact
 
 - **Name:** Subhan
-- **Email:** [your.email@example.com]
-- **LinkedIn:** [Your LinkedIn Profile]
-- **Twitter:** [@yourhandle]
-- **Portfolio:** [Your Live URL]
+- **Email:** [subhanfarrakh5@gmail.com]
+- **LinkedIn:** [https://linkedin.com/in/subhanf](LinkedIn)
+- **Twitter:** [@subhanf]
+- **Portfolio:** [subhanfarrakh.com]
 
 ## License
 
