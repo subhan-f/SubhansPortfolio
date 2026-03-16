@@ -31,43 +31,43 @@ Follow these instructions to get a copy of the project up and running on your lo
 ### Installation
 
 1. Clone the repository:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/your-username/SubhansPortfolio.git
-   \`\`\`
+   ```
 2. Navigate to the project directory:
-   \`\`\`bash
+   ```bash
    cd SubhansPortfolio
-   \`\`\`
+   ```
 3. Install dependencies:
-   \`\`\`bash
+   ```bash
    npm install
    # or
    yarn install
-   \`\`\`
+   ```
 
 ### Running the Development Server
 
-\`\`\`bash
+```bash
 npm start
 # or
 yarn start
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
 
 ### Building for Production
 
-\`\`\`bash
+```bash
 npm run build
 # or
 yarn build
-\`\`\`
+```
 
 Builds the app for production to the \`build\` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ## Folder Structure
 
-\`\`\`
+```
 SubhansPortfolio/
 ├── public/
 ├── src/
@@ -81,7 +81,7 @@ SubhansPortfolio/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
-\`\`\`
+```
 
 ## Deployment
 
