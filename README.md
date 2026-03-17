@@ -95,10 +95,11 @@ This is a personal project and is not open for direct contributions. However, if
 
 ## Contact
 
+- **Portfolio Live:** [subhanfarrakh.com](subhanfarrakh.com)
+
 - **Email:** [subhanfarrakh5@gmail.com](mailto:subhanfarrakh5@gmail.com)
 - **LinkedIn:** [subhanf](https://linkedin.com/in/subhanf)
-- **Twitter:** [@subhanf]
-- **Portfolio:** [subhanfarrakh.com](subhanfarrakh.com)
+- **Twitter:** [@SubhanFarrakh](https://x.com/@SubhanFarrakh)
 
 ## License
 
