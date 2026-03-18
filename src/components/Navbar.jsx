@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import OverlayMenu from './OverlayMenu';
-import Logo from '../assets/SF.svg';
+import Logo from '../assets/Logo.svg';
 import { FiMenu } from 'react-icons/fi';
 
 function Navbar() {
@@ -63,7 +63,7 @@ function Navbar() {
       >
         <div className="flex items-center space-x-2">
           <img src={Logo} alt="logo" className="w-12 h-12" />
-          <div className="text-2xl font-bold text-white hidden sm:block">Subhan</div>
+          {/* <div className="text-2xl font-bold text-white hidden sm:block"></div> */}
         </div>
         <div className="block lg:absolute lg:left-1/2 lg:-translate-x-1/2">
           <button
