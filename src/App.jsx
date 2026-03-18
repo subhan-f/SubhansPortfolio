@@ -14,8 +14,9 @@ function App() {
   return (
     <div className='relative gradient'>
       <CustomCursor/>
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
       <Navbar />
+
       <Home />
       <About />
       <Skills />
