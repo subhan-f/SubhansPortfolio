@@ -56,6 +56,7 @@ function Home() {
 
   useEffect(() => {
     const current = roles[index];
+    const isTyping = deleting ? subIndex > 0 : subIndex < current.length;
     const timeout = setTimeout(
       () => {
         if (!deleting && subIndex < current.length) setSubIndex((v) => v + 1);
@@ -72,6 +73,23 @@ function Home() {
     return () => clearTimeout(timeout);
   }, [subIndex, index, deleting, roles]);
 
+  useEffect(() => {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+  return () => document.head.removeChild(style);
+  }, []);
+  
+    const isTypingActive = useMemo(() => {
+    const current = roles[index];
+    return (deleting && subIndex > 0) || (!deleting && subIndex < current.length);
+  }, [deleting, subIndex, index, roles]);
+
   return (
     <section id="Home" className="w-full h-screen relative bg-black overflow-hidden">
       <ParticlesBackground />
@@ -80,7 +98,7 @@ function Home() {
 
       <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 ">
         <div className="flex flex-col justify-center h-full text-center lg:text-left relative">
-          <div className="w-full lg:pr-24 mx-auto max-w-[48rem]">
+          <div className="w-full lg:pr-24 mx-auto max-w-3xl">
             <motion.div
               className="mb-3 text-xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6em]"
               initial={{ opacity: 0, y: 12 }}
@@ -89,8 +107,11 @@ function Home() {
             >
               <span>{roles[index].substring(0, subIndex)}</span>
               <span
-                className="inline-block w-[2px] ml-1 bg-white animate-pulse align-middle"
-                style={{ height: '1em' }}
+                className="inline-block w-0.5 ml-1 bg-white animate-pulse align-middle"
+                style={{
+                  height: '1em',
+                  animation: isTypingActive ? 'none' : 'blink 1s steps(2, start) infinite',
+                }}
               ></span>
             </motion.div>
             <motion.h1
@@ -100,7 +121,7 @@ function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              Hello I'm
+              Hello, I'm
               <br />
               <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">
                 Subhan Farrakh
@@ -160,12 +181,16 @@ function Home() {
         </div>
 
         <div className="relative hidden lg:block flex-col justify-center items-center h-full w-full">
-          
           <div
-            className='absolute top-1p/2 -translate-y-1/2 pointer-events-none'
+            className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
             style={{
-              right: "10px", width: "min(22vw, 410px)", height: "min(40vw, 760px)", borderRadius: "50%",
-              filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)"
+              right: '10px',
+              width: 'min(22vw, 410px)',
+              height: 'min(40vw, 760px)',
+              borderRadius: '50%',
+              filter: 'blur(38px)',
+              opacity: 0.32,
+              background: 'conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)',
             }}
           />
 
