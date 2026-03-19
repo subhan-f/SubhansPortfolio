@@ -8,6 +8,7 @@ import { Linkedin, Github, Twitter } from 'lucide-react';
 
 import { a, filter, link } from 'framer-motion/client';
 import { FaXTwitter } from 'react-icons/fa6';
+import avatar from '../assets/avatar.png';
 FaXTwitter;
 
 const Fiverr = (props) => (
@@ -146,7 +147,7 @@ function Home() {
                   initial="initial"
                   whileHover="hover"
                   whileTap="tap"
-                  className="text-gray-200"
+                  className="text-gray-300"
                 >
                   <Icon
                     // fill="currentColor"
@@ -156,6 +157,32 @@ function Home() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="relative hidden lg:block flex-col justify-center items-center h-full w-full">
+          
+          <div
+            className='absolute top-1p/2 -translate-y-1/2 pointer-events-none'
+            style={{
+              right: "10px", width: "min(22vw, 410px)", height: "min(40vw, 760px)", borderRadius: "50%",
+              filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)"
+            }}
+          />
+
+          <motion.img
+            src={avatar}
+            alt="Subhan Farrakh"
+            className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl"
+            style={{
+              right: '-30px',
+              width: 'min(45vw, 780px)',
+              maxWidth: '100%',
+              maxHeight: '90vh',
+            }}
+            initial={{ opacity: 0, y: 40, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
         </div>
       </div>
     </section>
