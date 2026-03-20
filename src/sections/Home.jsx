@@ -144,14 +144,14 @@ function Home() {
             >
               <a
                 href="#Projects"
-                className="px-6 py-3 rounded-full font-medium text-lg text-white bg-linear-to-r from-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-opacity transition"
+                className="px-6 py-3 rounded-full font-medium text-lg text-white bg-linear-to-r from-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-opacity"
               >
                 View My Work
               </a>
               <a
                 href="/Resume.pdf"
                 download
-                className="px-6 py-3 rounded-full font-medium text-lg text-black bg-white shadow-lg hover:bg-gray-200 hover:scale-105 transition-opacity transition"
+                className="px-6 py-3 rounded-full font-medium text-lg text-black bg-white shadow-lg hover:bg-gray-200 hover:scale-105 transition-opacity"
               >
                 My Resume
               </a>
