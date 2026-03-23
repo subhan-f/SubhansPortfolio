@@ -9,6 +9,7 @@ import { Linkedin, Github, Twitter } from 'lucide-react';
 import { a, filter, link } from 'framer-motion/client';
 import { FaXTwitter } from 'react-icons/fa6';
 import avatar from '../assets/avatar.png';
+import { href } from 'react-router-dom';
 FaXTwitter;
 
 const Fiverr = (props) => (
@@ -26,10 +27,10 @@ const Fiverr = (props) => (
 );
 
 const socials = [
-  { Icon: Linkedin, label: 'Linkedin', link: 'https://linkedin.com/in/subhanf' },
-  { Icon: Fiverr, label: 'Fiverr', link: 'https://www.fiverr.com/subhan_codes' },
-  { Icon: Github, label: 'Github', link: 'https://github.com/subhan-f' },
-  { Icon: FaXTwitter, label: 'X', link: 'https://twitter.com/@SubhanFarrakh' },
+  { Icon: Linkedin, label: 'Linkedin', href: 'https://linkedin.com/in/subhanf' },
+  { Icon: Fiverr, label: 'Fiverr', href: 'https://www.fiverr.com/subhan_codes' },
+  { Icon: Github, label: 'Github', href: 'https://github.com/subhan-f' },
+  { Icon: FaXTwitter, label: 'X', href: 'https://twitter.com/@SubhanFarrakh' },
 ];
 
 const glowVariants = {
