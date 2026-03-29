@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 
 import { a, filter, link } from 'framer-motion/client';
 import { FaXTwitter } from 'react-icons/fa6';
