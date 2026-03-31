@@ -10,7 +10,6 @@ import { a, filter, link } from 'framer-motion/client';
 import { FaXTwitter } from 'react-icons/fa6';
 import avatar from '../assets/avatar.png';
 import { href } from 'react-router-dom';
-FaXTwitter;
 
 const Fiverr = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
