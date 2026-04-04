@@ -48,8 +48,8 @@ function Projects() {
         image: isMobile ? photo2 : img2,
       },
       {
-        title: 'Hungary Tiger',
-        link: 'https://hungarytiger.com',
+        title: 'Hungry Tiger',
+        link: 'https://hungrytiger.com',
         bgColor: '#dc9317',
         image: isMobile ? photo3 : img3,
       },
