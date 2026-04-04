@@ -127,6 +127,7 @@ function Projects() {
               style={{zIndex: 10, transition: "box-shadow 250ms ease"}}
               >
                 <img src={project.image} alt={project.title}
+                  
                   className='w-full h-full object-cover drop-shadow-2xl md:drop-shadow-2xl'
                   style={{
                     position: "relative",

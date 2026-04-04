@@ -86,6 +86,7 @@ function Contact() {
         >
           <motion.img
             src={Astra}
+            loading="lazy"
             alt="Contact"
             className="w-72 md:w-140 rounded-2xl shadow-lg object-cover"
             animate={{ y: [0, -10, 0] }}

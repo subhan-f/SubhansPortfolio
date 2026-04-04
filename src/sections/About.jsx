@@ -41,7 +41,7 @@ function About() {
             whileHover={{ scale: 1.04 }}
             transition={{ type: 'spring', stiffness: 200, damping: 80 }}
           >
-            <img src={profileImage} alt="Subhan Farrakh Profile" className="absolute inset-0" />
+            <img src={profileImage} alt="Subhan Farrakh Profile" loading="lazy" className="absolute inset-0" />
           </motion.div>
           <div className="flex-1 flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r  from-[#1cd8d2] via-[#00bf8f] to-[#1cd8d2] ">

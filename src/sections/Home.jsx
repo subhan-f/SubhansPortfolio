@@ -196,6 +196,7 @@ function Home() {
           <motion.img
             src={avatar}
             alt="Subhan Farrakh"
+            loading="lazy"
             className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl"
             style={{
               right: '-30px',
