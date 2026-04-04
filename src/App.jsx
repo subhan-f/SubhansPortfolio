@@ -46,6 +46,7 @@ function App() {
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://subhanfarrakh.com" />
             <meta property="og:image" content="https://subhanfarrakh.com/og-image.jpg" />
+            <meta name="twitter:image" content="https://subhanfarrakh.com/og-image.jpg" />
             <meta name="twitter:card" content="summary_large_image" />
             <link rel="canonical" href="https://subhanfarrakh.com" />
           </Helmet>
