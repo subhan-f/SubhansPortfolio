@@ -10,7 +10,7 @@ const testimonials = [
     name: 'Ali Simms',
     role: 'Odd Jobs Property Maintenance, USA',
     review:
-    "Subhan is a very conscientious and professional developer. He understands what you're looking for and does his best to provide it. He's very skilled, and will take very good care of your automation and AI needs.",
+      "Subhan is a very conscientious and professional developer. He understands what you're looking for and does his best to provide it. He's very skilled, and will take very good care of your automation and AI needs.",
     image: t2,
   },
   {
@@ -29,7 +29,8 @@ const testimonials = [
   {
     name: 'Sonia De La Torre',
     role: 'FHOD LLC, USA',
-    review: "Subhan did an exceptional job setting up my Podio CRM. He was professional, efficient, and incredibly knowledgeable, making the process smooth and hassle-free. Highly recommend his services!",
+    review:
+      'Subhan did an exceptional job setting up my Podio CRM. He was professional, efficient, and incredibly knowledgeable, making the process smooth and hassle-free. Highly recommend his services!',
     image: t4,
   },
 ];
@@ -52,7 +53,8 @@ function Testimonials() {
         {testimonials.map((t, i) => (
           <motion.div
             key={t.name}
-            initial={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 flex flex-col items-center text-center transform transition duration-500 hover:scale-105 hover:rotate-1"

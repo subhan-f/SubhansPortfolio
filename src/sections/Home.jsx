@@ -5,11 +5,8 @@ import { useMemo } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Linkedin, Github } from 'lucide-react';
-
-import { a, filter, link } from 'framer-motion/client';
 import { FaXTwitter } from 'react-icons/fa6';
 import avatar from '../assets/avatar.png';
-import { href } from 'react-router-dom';
 
 const Fiverr = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -43,13 +40,15 @@ const glowVariants = {
   tap: { scale: 0.95, y: 0, transition: { duration: 0.08 } },
 };
 
+const roles = [
+  'AI Automation Engineer',
+  'Agentic AI Developer',
+  'AI/ML Engineer',
+  'MERN Stack Developer',
+];
+
 function Home() {
-  const roles = useMemo(() => [
-    'AI Automation Engineer',
-    'Agentic AI Developer',
-    'AI/ML Engineer',
-    'MERN Stack Developer',
-  ]);
+
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);

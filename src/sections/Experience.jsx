@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useScroll } from 'framer-motion';
 import { useTransform } from 'framer-motion';
-import { div } from 'framer-motion/client';
 import React from 'react';
 import { useMemo } from 'react';
 import { useEffect } from 'react';

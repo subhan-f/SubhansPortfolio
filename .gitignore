@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 .env
+code.js
+project-files-export.json

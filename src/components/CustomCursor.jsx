@@ -6,7 +6,7 @@ function CustomCursor() {
     const moveHandler = (e) => setPosition({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', moveHandler);
     return () => window.removeEventListener('mousemove', moveHandler);
-  });
+  }, []);
 
   return (
     <div

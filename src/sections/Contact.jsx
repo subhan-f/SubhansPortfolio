@@ -4,12 +4,15 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import Astra from '../assets/Astra.png';
-import { Repeat } from 'lucide-react';
-import { div, p } from 'framer-motion/client';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+  console.error('❌ EmailJS environment variables are missing. Check your .env file.');
+}
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -33,7 +36,7 @@ function Contact() {
     const required = ['name', 'email', 'service', 'idea'];
     const newErrors = {};
     required.forEach((f) => !formData[f].trim() && (newErrors[f] = 'Fill this field'));
-    if (formData.service !== 'other' && !formData.budget.trim())
+    if (formData.service !== 'Others' && !formData.budget.trim())
       newErrors.budget = 'Fill this field';
     setErrors(newErrors);
     return !Object.keys(newErrors).length;

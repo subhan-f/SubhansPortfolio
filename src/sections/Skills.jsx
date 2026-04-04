@@ -1,13 +1,11 @@
 import { useMotionValue } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { div, section } from 'framer-motion/client';
 import React from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { AiOutlineOpenAI } from 'react-icons/ai';
 import { BiLogoPostgresql } from 'react-icons/bi';
-import { DiPostgresql } from 'react-icons/di';
 import { FaDocker, FaJava, FaNodeJs, FaPython, FaReact } from 'react-icons/fa6';
 import { RiSupabaseFill, RiTailwindCssFill } from 'react-icons/ri';
 import { SiExpress, SiFastapi, SiMake, SiMongodb, SiN8N, SiZapier } from 'react-icons/si';

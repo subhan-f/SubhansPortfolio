@@ -3,26 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useMemo } from 'react';
+
+// ✅ moved outside component to avoid useMemo
+const greetings = [
+  'Hello', 'Hola', 'Ciao', 'Hallo', 'नमस्ते', 'Bonjour',
+  'こんにちは', '안녕하세요', 'Здравствуйте', '你好', 'مرحبا', 'Salam'
+];
 
 function IntroAnimation({ onFinish }) {
-  const greetings = useMemo(
-    () => [
-      'Hello',
-      'Hola',
-      'Ciao',
-      'Hallo',
-      'नमस्ते',
-      'Bonjour',
-      'こんにちは',
-      '안녕하세요',
-      'Здравствуйте',
-      '你好',
-      'مرحبا',
-      'Salam',
-    ],
-    []
-  );
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
   useEffect(() => {
@@ -33,7 +21,8 @@ function IntroAnimation({ onFinish }) {
       const t = setTimeout(() => setVisible(false), 300);
       return () => clearTimeout(t);
     }
-  }, [index, greetings.length]);
+  }, [index]);
+
   return (
     <AnimatePresence onExitComplete={onFinish}>
       {visible && (
@@ -42,10 +31,7 @@ function IntroAnimation({ onFinish }) {
           initial={{ y: 0 }}
           exit={{
             y: '-100%',
-            transition: {
-              duration: 1.05,
-              ease: [0.22, 1, 0.36, 1],
-            },
+            transition: { duration: 1.05, ease: [0.22, 1, 0.36, 1] }
           }}
         >
           <motion.h1

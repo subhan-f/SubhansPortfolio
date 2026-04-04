@@ -11,7 +11,6 @@ import img2 from '../assets/img2.JPG';
 import img3 from '../assets/img3.JPG';
 import { useScroll } from 'framer-motion';
 import { useMotionValueEvent } from 'framer-motion';
-import { div, h3 } from 'framer-motion/client';
 import {motion, AnimatePresence } from 'framer-motion';
 
 const useIsMobile = (query = '(max-width: 630px)') => {
@@ -155,7 +154,7 @@ function Projects() {
         }`}>
           <a href={activeProject?.link}
             target='_blank'
-            rel="noopner noreferrer"
+            rel="noopener noreferrer"
             className='inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all'
             aria-label={`View ${activeProject?.title}`}
           >View Project</a>

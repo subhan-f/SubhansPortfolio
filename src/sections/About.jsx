@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import profileImage from '../assets/Subhan.png';
-import { div } from 'framer-motion/client';
 
 function About() {
   const stats = [
@@ -62,7 +61,7 @@ function About() {
               {stats.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="rounded-xl border border-white/10 bg-white/5 px4 py-3 text-center"
+                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.4 }}
