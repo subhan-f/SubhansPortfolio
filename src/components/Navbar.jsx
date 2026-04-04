@@ -12,7 +12,7 @@ function Navbar() {
   const timerId = useRef(null);
 
   useEffect(() => {
-    const homeSection = document.getElementById('Home');
+    const homeSection = document.getElementById('home');
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -49,11 +49,11 @@ function Navbar() {
       }
       lastScrollY.current = currentScrollY;
     };
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener('scroll', handleScroll);
       if (timerId.current) clearTimeout(timerId.current);
-    }
+    };
   }, [forceVisible]);
 
   return (
@@ -76,7 +76,7 @@ function Navbar() {
         </div>
         <div className="hidden lg:block">
           <a
-            href="#Contact"
+            href="#contact"
             className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-full font-medium shadow-lg hover:opacity-90 transition-opacity duration-300"
           >
             Reach Out

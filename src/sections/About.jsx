@@ -16,7 +16,7 @@ function About() {
 
   return (
     <section
-      id="About"
+      id="about"
       className="min-h-screen w-full flex items-center justify-center relative bg-black text-white overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
@@ -79,14 +79,14 @@ function About() {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <a
-                href="#Projects"
+                href="#projects"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-black font-semibold px-5 py-3 hover:bg-gray-200  hover:scale-105 transition-opacity"
               >
                 View Projects
               </a>
 
               <a
-                href="#Contact"
+                href="#contact"
                 className="inline-flex items-center justify-center rounded-lg  bg-white/5  text-white font-semibold px-5 py-3 border border-white/10 hover:bg-white/20 hover:scale-105 transition-opacity"
               >
                 Get In Touch

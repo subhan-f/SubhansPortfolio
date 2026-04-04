@@ -10,7 +10,15 @@ export default defineConfig({
     tailwindcss(),
     sitemap({
       hostname: 'https://subhanfarrakh.com',
-      dynamicRoutes: ['/'],
+      dynamicRoutes: [
+        '/',
+        '/about',
+        '/skills',
+        '/projects',
+        '/experience',
+        '/testimonials',
+        '/contact',
+      ],
     }),
   ],
 });

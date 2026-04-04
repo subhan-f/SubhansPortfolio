@@ -4,20 +4,33 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-// ✅ moved outside component to avoid useMemo
 const greetings = [
-  'Hello', 'Hola', 'Ciao', 'Hallo', 'नमस्ते', 'Bonjour',
-  'こんにちは', '안녕하세요', 'Здравствуйте', '你好', 'مرحبا', 'Salam'
+  'Hello',
+  'Hola',
+  'Ciao',
+  'Hallo',
+  'नमस्ते',
+  'Bonjour',
+  'こんにちは',
+  '안녕하세요',
+  'Здравствуйте',
+  '你好',
+  'مرحبا',
+  'Salam',
 ];
 
 function IntroAnimation({ onFinish }) {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+  const origin = isMobile ? '95% 8%' : '50% 8%';
+
   useEffect(() => {
     if (index < greetings.length - 1) {
       const id = setInterval(() => setIndex((i) => i + 1), 180);
       return () => clearInterval(id);
     } else {
+      // After last greeting, wait a moment then trigger exit
       const t = setTimeout(() => setVisible(false), 300);
       return () => clearTimeout(t);
     }
@@ -27,12 +40,12 @@ function IntroAnimation({ onFinish }) {
     <AnimatePresence onExitComplete={onFinish}>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-9999 flex items-center justify-center bg-black text-white overflow-hidden"
-          initial={{ y: 0 }}
-          exit={{
-            y: '-100%',
-            transition: { duration: 1.05, ease: [0.22, 1, 0.36, 1] }
-          }}
+          key="intro-overlay" // stable key to help AnimatePresence
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black text-white"
+          initial={{ clipPath: `circle(150% at ${origin})` }}
+          animate={{ clipPath: `circle(150% at ${origin})` }}
+          exit={{ clipPath: `circle(0% at ${origin})` }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         >
           <motion.h1
             key={index}

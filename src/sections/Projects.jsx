@@ -74,7 +74,7 @@ function Projects() {
 
   return (
     <section
-      id="Projects"
+      id="projects"
       ref={sceneRef}
       className="relative text-white"
       style={{

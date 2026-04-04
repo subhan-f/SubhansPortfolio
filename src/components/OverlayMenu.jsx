@@ -16,17 +16,17 @@ function OverlayMenu({ isOpen, onClose }) {
           animate={{ clipPath: `circle(150% at ${origin})` }}
           exit={{ clipPath: `circle(0% at ${origin})` }}
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-          style={{backgroundColor: "rgba(0,0,0,0.95)"}}
+          style={{ backgroundColor: 'rgba(0,0,0,0.95)' }}
         >
           <button
             onClick={onClose}
             className="absolute top-6 right-6 text-white text-3xl"
             aria-label="Close Menu"
           >
-            <FiX />
+            <FiX className="hover:cursor-pointer"/>
           </button>
           <ul className="space-y-7 text-center">
-            {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Testimonials', 'Contact'].map(
+            {['home', 'about', 'skills', 'projects', 'experience', 'testimonials', 'contact'].map(
               (item, index) => (
                 <motion.li
                   key={item}
@@ -35,11 +35,11 @@ function OverlayMenu({ isOpen, onClose }) {
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
                   <a
-                    href={`#${item}`}
+                    href={item === 'home' ? '/' : `/${item.toLowerCase()}`}
                     onClick={onClose}
-                    className="text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300 "
+                    className="text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300"
                   >
-                    {item}
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
                   </a>
                 </motion.li>
               )
