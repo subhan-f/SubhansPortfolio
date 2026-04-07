@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Linkedin, Github } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 import avatar from '../assets/avatar.png';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const Fiverr = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -215,23 +216,26 @@ function Home({ introComplete }) {
             transition={{ duration: 0.6 }}
           />
 
-          <motion.img
-            src={avatar}
-            alt="Subhan Farrakh"
-            loading="lazy"
-            className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl"
-            style={{
-              right: 0,
-              width: 'min(40vw, 650px)',
-              maxWidth: '100%',
-              maxHeight: '90vh',
-            }}
+          <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={
               animationsReady ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.98 }
             }
             transition={{ duration: 0.6 }}
-          />
+          >
+            <OptimizedImage
+              src={avatar}
+              alt="Subhan Farrakh"
+              loading="lazy"
+              className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl"
+              style={{
+                right: 0,
+                width: 'min(40vw, 650px)',
+                maxWidth: '100%',
+                maxHeight: '90vh',
+              }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

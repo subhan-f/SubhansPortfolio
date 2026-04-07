@@ -4,6 +4,7 @@ import t2 from '../assets/AliSimms.webp';
 import t3 from '../assets/Lidi.webp';
 import t4 from '../assets/sonia.webp';
 import { motion } from 'framer-motion';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const testimonials = [
   {
@@ -59,7 +60,7 @@ function Testimonials() {
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 flex flex-col items-center text-center transform transition duration-500 hover:scale-105 hover:rotate-1"
           >
-            <img
+            <OptimizedImage
               src={t.image}
               alt={t.name}
               className="w-20 h-20 rounded-full border-2 border-white/40 mb-4 object-cover"

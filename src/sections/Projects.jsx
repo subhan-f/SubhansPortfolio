@@ -12,6 +12,7 @@ import img3 from '../assets/img3.JPG';
 import { useScroll } from 'framer-motion';
 import { useMotionValueEvent } from 'framer-motion';
 import {motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const useIsMobile = (query = '(max-width: 630px)') => {
   const [isMobile, setIsMobile] = useState(
@@ -126,7 +127,7 @@ function Projects() {
                 } h-[62vh] sm:h-[66vh]`}
               style={{zIndex: 10, transition: "box-shadow 250ms ease"}}
               >
-                <img src={project.image} alt={project.title}
+                <OptimizedImage src={project.image} alt={project.title}
                   
                   className='w-full h-full object-cover drop-shadow-2xl md:drop-shadow-2xl'
                   style={{

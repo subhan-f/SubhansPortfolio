@@ -4,6 +4,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import Astra from '../assets/Astra.png';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -12,7 +13,6 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
   console.error('❌ EmailJS environment variables are missing. Check your .env file.');
 }
-
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -84,14 +84,17 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.img
-            src={Astra}
-            loading="lazy"
-            alt="Contact"
-            className="w-72 md:w-140 rounded-2xl shadow-lg object-cover"
+          <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          />
+          >
+            <OptimizedImage
+              src={Astra}
+              loading="lazy"
+              alt="Contact"
+              className="w-72 md:w-140 rounded-2xl shadow-lg object-cover"
+            />
+          </motion.div>
         </motion.div>
         {/* right side */}
         <motion.div
