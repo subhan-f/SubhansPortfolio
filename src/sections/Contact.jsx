@@ -3,9 +3,9 @@ import ParticlesBackground from '../components/ParticlesBackground';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import Astra from '../assets/Astra.png';
 import { OptimizedImage } from '../components/OptimizedImage';
 
+const Astra = '/assets/Astra.png';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;

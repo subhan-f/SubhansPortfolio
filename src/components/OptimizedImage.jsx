@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 export function OptimizedImage({ src, alt, className, ...props }) {
   // In development, skip <picture> and serve the original image
   if (import.meta.env.DEV) {
-    return <img src={src} alt={alt} className={className} loading="lazy" {...props} />;
+    return <motion.img src={src} alt={alt} className={className} loading="lazy" {...props} />;
   }
 
   // Production: use modern formats
@@ -10,7 +11,8 @@ export function OptimizedImage({ src, alt, className, ...props }) {
     <picture>
       <source srcSet={`${base}.avif`} type="image/avif" />
       <source srcSet={`${base}.webp`} type="image/webp" />
-      <img src={src} alt={alt} className={className} loading="lazy" {...props} />
+      <motion.img src={src} alt={alt} className={className} loading="lazy" {...props} />
     </picture>
+    
   );
 }
