@@ -2,6 +2,7 @@ import { useState, lazy, Suspense, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSectionObserver } from './hooks/useSectionObserver';
 import { isBot } from './utils/botDetect';
+import { Analytics } from "@vercel/analytics/next"
 
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -88,6 +89,7 @@ function App() {
         </Suspense>
         <WhatsappButton />
       </div>
+      <Analytics/>
     </>
   );
 }
