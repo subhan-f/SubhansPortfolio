@@ -1,7 +1,7 @@
 {
   "metadata": {
     "projectPath": "D:\\GitHub\\SubhansPortfolio",
-    "exportDate": "2026-04-09T05:35:10.601Z",
+    "exportDate": "2026-04-09T06:11:05.179Z",
     "totalFiles": 73,
     "ignorePatterns": [
       "practice/",
@@ -40,7 +40,8 @@
       ".env",
       "/node_modules/",
       "/.react-router/",
-      "/build/"
+      "/build/",
+      "code.js"
     ],
     "fileTypes": {
       "text": 55,
@@ -63,9 +64,9 @@
     },
     ".gitignore": {
       "type": "text",
-      "size": 70,
+      "size": 78,
       "extension": "",
-      "content": ".DS_Store\n.env\n/node_modules/\n\n# React Router\n/.react-router/\n/build/\n"
+      "content": ".DS_Store\n.env\n/node_modules/\n\n# React Router\n/.react-router/\n/build/\ncode.js\n"
     },
     ".prettierignore": {
       "type": "text",
@@ -165,9 +166,9 @@
     },
     "app\\components\\shared\\OptimizedImage.tsx": {
       "type": "text",
-      "size": 770,
+      "size": 782,
       "extension": ".tsx",
-      "content": "import { motion, type MotionProps } from \"framer-motion\";\r\nimport type { ComponentPropsWithoutRef } from \"react\";\r\n\r\ntype OptimizedImageProps = ComponentPropsWithoutRef<\"img\"> & MotionProps;\r\n\r\nexport const OptimizedImage = ({ src, alt, ...props }: OptimizedImageProps) => {\r\n  const isProduction = import.meta.env.PROD;\r\n  const base = typeof src === \"string\" ? src.replace(/\\.(png|jpe?g)$/i, \"\") : \"\";\r\n\r\n  if (isProduction && base) {\r\n    return (\r\n      <picture>\r\n        <source srcSet={`${base}.avif`} type=\"image/avif\" />\r\n        <source srcSet={`${base}.webp`} type=\"image/webp\" />\r\n        <motion.img src={src} alt={alt} loading=\"lazy\" {...props} />\r\n      </picture>\r\n    );\r\n  }\r\n\r\n  return <motion.img src={src} alt={alt} loading=\"lazy\" {...props} />;\r\n};"
+      "content": "import { motion, type MotionProps } from \"framer-motion\";\r\nimport type { ComponentPropsWithoutRef } from \"react\";\r\n\r\ntype OptimizedImageProps = ComponentPropsWithoutRef<\"img\"> & MotionProps;\r\n\r\nexport const OptimizedImage = ({ src, alt, ...props }: OptimizedImageProps) => {\r\n  const isProduction = import.meta.env.PROD;\r\n  const base = typeof src === \"string\" ? src.replace(/\\.(png|jpe?g)$/i, \"\") : \"\";\r\n\r\n  if (isProduction && base) {\r\n    return (\r\n      // <picture>\r\n      //   <source srcSet={`${base}.avif`} type=\"image/avif\" />\r\n      //   <source srcSet={`${base}.webp`} type=\"image/webp\" />\r\n        <motion.img src={src} alt={alt} loading=\"lazy\" {...props} />\r\n      // </picture>\r\n    );\r\n  }\r\n\r\n  return <motion.img src={src} alt={alt} loading=\"lazy\" {...props} />;\r\n};"
     },
     "app\\components\\shared\\ParticlesBackground.tsx": {
       "type": "text",
@@ -339,9 +340,9 @@
     },
     "package.json": {
       "type": "text",
-      "size": 1433,
+      "size": 1300,
       "extension": ".json",
-      "content": "{\n  \"name\": \"subhansportfolio2\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"react-router build\",\n    \"postbuild\": \"node scripts/generate-sitemap.js\",\n    \"dev\": \"react-router dev\",\n    \"start\": \"react-router-serve ./build/server/index.js\",\n    \"typecheck\": \"react-router typegen && tsc\"\n  },\n  \"dependencies\": {\n    \"@emailjs/nodejs\": \"^5.0.2\",\n    \"@react-router/node\": \"7.14.0\",\n    \"@react-router/serve\": \"7.14.0\",\n    \"@remix-run/node\": \"^2.17.4\",\n    \"@remix-run/react\": \"^2.17.4\",\n    \"@remix-run/serve\": \"^2.17.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"clsx\": \"^2.1.1\",\n    \"framer-motion\": \"^12.38.0\",\n    \"isbot\": \"^5.1.36\",\n    \"lucide-react\": \"^1.7.0\",\n    \"react\": \"^19.2.5\",\n    \"react-dom\": \"^19.2.5\",\n    \"react-icons\": \"^5.6.0\",\n    \"react-router\": \"7.14.0\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@react-router/dev\": \"7.14.0\",\n    \"@remix-run/dev\": \"^2.17.4\",\n    \"@tailwindcss/vite\": \"^4.2.2\",\n    \"@types/node\": \"^22\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.58.1\",\n    \"@typescript-eslint/parser\": \"^8.58.1\",\n    \"eslint\": \"^10.2.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^7.0.1\",\n    \"prettier\": \"^3.8.1\",\n    \"tailwindcss\": \"^4.2.2\",\n    \"typescript\": \"^5.9.3\",\n    \"vite\": \"^8.0.3\",\n    \"vite-plugin-image-optimizer\": \"^2.0.3\"\n  }\n}"
+      "content": "{\n  \"name\": \"subhansportfolio\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"react-router build\",\n    \"dev\": \"react-router dev\",\n    \"start\": \"react-router-serve ./build/server/index.js\",\n    \"typecheck\": \"react-router typegen && tsc\"\n  },\n  \"dependencies\": {\n    \"@emailjs/nodejs\": \"^5.0.2\",\n    \"@react-router/node\": \"7.14.0\",\n    \"@react-router/serve\": \"7.14.0\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"clsx\": \"^2.1.1\",\n    \"framer-motion\": \"^12.38.0\",\n    \"isbot\": \"^5.1.36\",\n    \"lucide-react\": \"^1.7.0\",\n    \"react\": \"^19.2.5\",\n    \"react-dom\": \"^19.2.5\",\n    \"react-icons\": \"^5.6.0\",\n    \"react-router\": \"7.14.0\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@react-router/dev\": \"7.14.0\",\n    \"@tailwindcss/vite\": \"^4.2.2\",\n    \"@types/node\": \"^22\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.58.1\",\n    \"@typescript-eslint/parser\": \"^8.58.1\",\n    \"eslint\": \"^10.2.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^7.0.1\",\n    \"prettier\": \"^3.8.1\",\n    \"tailwindcss\": \"^4.2.2\",\n    \"typescript\": \"^5.9.3\",\n    \"vite\": \"^8.0.3\"\n  },\n    \"devEngines\":{\n    \"packageManager\": {\n      \"name\": \"pnpm\",\n      \"version\": \"^7.x.x\"\n    }\n  }\n}\n"
     },
     "public\\assets\\AliSimms.webp": {
       "type": "binary",
@@ -483,9 +484,9 @@
     },
     "vite.config.ts": {
       "type": "text",
-      "size": 517,
+      "size": 268,
       "extension": ".ts",
-      "content": "import { reactRouter } from \"@react-router/dev/vite\";\nimport { defineConfig } from \"vite\";\nimport tailwindcss from \"@tailwindcss/vite\";\nimport { ViteImageOptimizer } from \"vite-plugin-image-optimizer\";\n\nexport default defineConfig({\n  resolve: {\n    tsconfigPaths: true,\n  },\n  plugins: [\n    reactRouter(),\n    tailwindcss(),\n    ViteImageOptimizer({\n      png: { quality: 80 },\n      jpeg: { quality: 80 },\n      jpg: { quality: 80 },\n      webp: { lossless: true },\n      avif: { lossless: true },\n    }),\n  ],\n});"
+      "content": "import { reactRouter } from \"@react-router/dev/vite\";\nimport { defineConfig } from \"vite\";\nimport tailwindcss from \"@tailwindcss/vite\";\n\nexport default defineConfig({\n  resolve: {\n    tsconfigPaths: true,\n  },\n  plugins: [\n    reactRouter(),\n    tailwindcss(),\n  ]\n});"
     }
   }
 }
