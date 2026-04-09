@@ -1,5 +1,5 @@
 {
-  "name": "subhansportfolio2",
+  "name": "subhansportfolio",
   "private": true,
   "type": "module",
   "scripts": {
@@ -40,5 +40,10 @@
     "typescript": "^5.9.3",
     "vite": "^8.0.3"
   },
-  "packageManager": "pnpm@7.5.1"
+    "devEngines":{
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^7.x.x"
+    }
+  }
 }
