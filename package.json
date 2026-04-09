@@ -13,9 +13,6 @@
     "@emailjs/nodejs": "^5.0.2",
     "@react-router/node": "7.14.0",
     "@react-router/serve": "7.14.0",
-    "@remix-run/node": "^2.17.4",
-    "@remix-run/react": "^2.17.4",
-    "@remix-run/serve": "^2.17.4",
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -30,7 +27,6 @@
   },
   "devDependencies": {
     "@react-router/dev": "7.14.0",
-    "@remix-run/dev": "^2.17.4",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^19.2.14",

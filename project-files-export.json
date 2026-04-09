@@ -1,7 +1,7 @@
 {
   "metadata": {
     "projectPath": "D:\\GitHub\\SubhansPortfolio",
-    "exportDate": "2026-04-09T05:19:03.838Z",
+    "exportDate": "2026-04-09T05:35:10.601Z",
     "totalFiles": 73,
     "ignorePatterns": [
       "practice/",
@@ -339,9 +339,9 @@
     },
     "package.json": {
       "type": "text",
-      "size": 1470,
+      "size": 1433,
       "extension": ".json",
-      "content": "{\n  \"name\": \"subhansportfolio2\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"react-router build\",\n    \"postbuild\": \"node scripts/generate-sitemap.js\",\n    \"dev\": \"react-router dev\",\n    \"start\": \"react-router-serve ./build/server/index.js\",\n    \"typecheck\": \"react-router typegen && tsc\"\n  },\n  \"dependencies\": {\n    \"@emailjs/nodejs\": \"^5.0.2\",\n    \"@react-router/node\": \"7.14.0\",\n    \"@react-router/serve\": \"7.14.0\",\n    \"@remix-run/node\": \"^2.17.4\",\n    \"@remix-run/react\": \"^2.17.4\",\n    \"@remix-run/serve\": \"^2.17.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"clsx\": \"^2.1.1\",\n    \"framer-motion\": \"^12.38.0\",\n    \"isbot\": \"^5.1.36\",\n    \"lucide-react\": \"^1.7.0\",\n    \"react\": \"^19.2.5\",\n    \"react-dom\": \"^19.2.5\",\n    \"react-icons\": \"^5.6.0\",\n    \"react-router\": \"7.14.0\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@react-router/dev\": \"7.14.0\",\n    \"@remix-run/dev\": \"^2.17.4\",\n    \"@tailwindcss/vite\": \"^4.2.2\",\n    \"@types/node\": \"^22\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.58.1\",\n    \"@typescript-eslint/parser\": \"^8.58.1\",\n    \"eslint\": \"^10.2.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^7.0.1\",\n    \"prettier\": \"^3.8.1\",\n    \"tailwindcss\": \"^4.2.2\",\n    \"typescript\": \"^5.9.3\",\n    \"vite\": \"^8.0.3\",\n    \"vite-plugin-image-optimizer\": \"^2.0.3\",\n    \"vite-plugin-sitemap\": \"^0.8.2\"\n  }\n}"
+      "content": "{\n  \"name\": \"subhansportfolio2\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"react-router build\",\n    \"postbuild\": \"node scripts/generate-sitemap.js\",\n    \"dev\": \"react-router dev\",\n    \"start\": \"react-router-serve ./build/server/index.js\",\n    \"typecheck\": \"react-router typegen && tsc\"\n  },\n  \"dependencies\": {\n    \"@emailjs/nodejs\": \"^5.0.2\",\n    \"@react-router/node\": \"7.14.0\",\n    \"@react-router/serve\": \"7.14.0\",\n    \"@remix-run/node\": \"^2.17.4\",\n    \"@remix-run/react\": \"^2.17.4\",\n    \"@remix-run/serve\": \"^2.17.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"clsx\": \"^2.1.1\",\n    \"framer-motion\": \"^12.38.0\",\n    \"isbot\": \"^5.1.36\",\n    \"lucide-react\": \"^1.7.0\",\n    \"react\": \"^19.2.5\",\n    \"react-dom\": \"^19.2.5\",\n    \"react-icons\": \"^5.6.0\",\n    \"react-router\": \"7.14.0\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@react-router/dev\": \"7.14.0\",\n    \"@remix-run/dev\": \"^2.17.4\",\n    \"@tailwindcss/vite\": \"^4.2.2\",\n    \"@types/node\": \"^22\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.58.1\",\n    \"@typescript-eslint/parser\": \"^8.58.1\",\n    \"eslint\": \"^10.2.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^7.0.1\",\n    \"prettier\": \"^3.8.1\",\n    \"tailwindcss\": \"^4.2.2\",\n    \"typescript\": \"^5.9.3\",\n    \"vite\": \"^8.0.3\",\n    \"vite-plugin-image-optimizer\": \"^2.0.3\"\n  }\n}"
     },
     "public\\assets\\AliSimms.webp": {
       "type": "binary",
@@ -469,7 +469,7 @@
       "extension": ".md",
       "content": "# Welcome to React Router!\n\nA modern, production-ready template for building full-stack React applications using React Router.\n\n[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)\n\n## Features\n\n- 🚀 Server-side rendering\n- ⚡️ Hot Module Replacement (HMR)\n- 📦 Asset bundling and optimization\n- 🔄 Data loading and mutations\n- 🔒 TypeScript by default\n- 🎉 TailwindCSS for styling\n- 📖 [React Router docs](https://reactrouter.com/)\n\n## Getting Started\n\n### Installation\n\nInstall the dependencies:\n\n```bash\nnpm install\n```\n\n### Development\n\nStart the development server with HMR:\n\n```bash\nnpm run dev\n```\n\nYour application will be available at `http://localhost:5173`.\n\n## Building for Production\n\nCreate a production build:\n\n```bash\nnpm run build\n```\n\n## Deployment\n\n### Docker Deployment\n\nTo build and run using Docker:\n\n```bash\ndocker build -t my-app .\n\n# Run the container\ndocker run -p 3000:3000 my-app\n```\n\nThe containerized application can be deployed to any platform that supports Docker, including:\n\n- AWS ECS\n- Google Cloud Run\n- Azure Container Apps\n- Digital Ocean App Platform\n- Fly.io\n- Railway\n\n### DIY Deployment\n\nIf you're familiar with deploying Node applications, the built-in app server is production-ready.\n\nMake sure to deploy the output of `npm run build`\n\n```\n├── package.json\n├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)\n├── build/\n│   ├── client/    # Static assets\n│   └── server/    # Server-side code\n```\n\n## Styling\n\nThis template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.\n\n---\n\nBuilt with ❤️ using React Router.\n"
     },
-    "scripts\\generate-sitmap.js": {
+    "scripts\\generate-sitemap.js": {
       "type": "text",
       "size": 1272,
       "extension": ".js",
@@ -483,9 +483,9 @@
     },
     "vite.config.ts": {
       "type": "text",
-      "size": 798,
+      "size": 517,
       "extension": ".ts",
-      "content": "import { reactRouter } from \"@react-router/dev/vite\";\nimport { defineConfig } from \"vite\";\nimport tailwindcss from \"@tailwindcss/vite\";\nimport sitemap from \"vite-plugin-sitemap\";\nimport { ViteImageOptimizer } from \"vite-plugin-image-optimizer\";\n\nexport default defineConfig({\n  resolve: {\n    tsconfigPaths: true,\n  },\n  plugins: [\n    reactRouter(),\n    tailwindcss(),\n    sitemap({\n      hostname: \"https://subhanfarrakh.com\",\n      dynamicRoutes: [\n        \"/\",\n        \"/about\",\n        \"/skills\",\n        \"/projects\",\n        \"/experience\",\n        \"/testimonials\",\n        \"/contact\",\n      ],\n    }),\n    ViteImageOptimizer({\n      png: { quality: 80 },\n      jpeg: { quality: 80 },\n      jpg: { quality: 80 },\n      webp: { lossless: true },\n      avif: { lossless: true },\n    }),\n  ],\n});"
+      "content": "import { reactRouter } from \"@react-router/dev/vite\";\nimport { defineConfig } from \"vite\";\nimport tailwindcss from \"@tailwindcss/vite\";\nimport { ViteImageOptimizer } from \"vite-plugin-image-optimizer\";\n\nexport default defineConfig({\n  resolve: {\n    tsconfigPaths: true,\n  },\n  plugins: [\n    reactRouter(),\n    tailwindcss(),\n    ViteImageOptimizer({\n      png: { quality: 80 },\n      jpeg: { quality: 80 },\n      jpg: { quality: 80 },\n      webp: { lossless: true },\n      avif: { lossless: true },\n    }),\n  ],\n});"
     }
   }
 }
