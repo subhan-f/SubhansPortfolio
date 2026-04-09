@@ -9,11 +9,11 @@ export const OptimizedImage = ({ src, alt, ...props }: OptimizedImageProps) => {
 
   if (isProduction && base) {
     return (
-      <picture>
-        <source srcSet={`${base}.avif`} type="image/avif" />
-        <source srcSet={`${base}.webp`} type="image/webp" />
+      // <picture>
+      //   <source srcSet={`${base}.avif`} type="image/avif" />
+      //   <source srcSet={`${base}.webp`} type="image/webp" />
         <motion.img src={src} alt={alt} loading="lazy" {...props} />
-      </picture>
+      // </picture>
     );
   }
 
