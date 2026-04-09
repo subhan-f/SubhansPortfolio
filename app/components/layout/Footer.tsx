@@ -1,0 +1,38 @@
+import { motion } from 'framer-motion';
+import { SocialIcons } from '~/components/shared/SocialIcons';
+
+export const Footer = () => {
+  return (
+    <footer className="relative overflow-hidden bg-black">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_70%_35%,rgba(13,88,202,0.35),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_30%_70%,rgba(16,185,129,0.30),transparent_70%)]" />
+      <motion.div
+        className="relative z-10 px-4 sm:px-8 lg:px-10 py-16 md:py-20 flex flex-col items-center text-center space-y-6"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h1
+          className="font-semibold leading-none text-white text-center select-none whitespace-normal sm:whitespace-nowrap"
+          style={{
+            fontSize: 'clamp(3rem,5vw,14rem)',
+            letterSpacing: '0.02em',
+            lineHeight: 0.9,
+            textShadow: '0 2px 18px rgba(0,0,0,0.45)',
+          }}
+        >
+          Subhan Farrakh
+        </h1>
+        <div className="h-0.75 w-24 md:w-32 rounded-full bg-linear-to-r from-[#0d58cc] via-cyan-300 to-emerald-400" />
+        <SocialIcons />
+        <p className="text-gray-300 italic max-w-xl">
+          "Do what you love the BEST, let me automate the REST." 😜
+        </p>
+        <p className="text-xs text-gray-400">
+          &copy; {new Date().getFullYear()} Subhan Farrakh. All rights reserved.
+        </p>
+      </motion.div>
+    </footer>
+  );
+};
