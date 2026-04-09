@@ -68,6 +68,6 @@ code.js
 project-files-export.json
 
 # --- Optional Lock Files (uncomment if you prefer to ignore them) ---
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
