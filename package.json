@@ -39,11 +39,5 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^8.0.3"
-  },
-    "devEngines":{
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^7.x.x"
-    }
   }
 }
