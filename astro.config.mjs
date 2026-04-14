@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 export default defineConfig({
   site: 'https://subhanfarrakh.com',
@@ -13,6 +14,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     Analytics(),
+    SpeedInsights(),
   ],
   vite: {
     plugins: [tailwindcss()],
