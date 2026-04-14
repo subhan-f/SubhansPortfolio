@@ -1,0 +1,82 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const allTags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+  return allTags.map((tag) => ({
+    params: { tag: tag.toLowerCase().replace(/[\s/]+/g, '-') },
+    props: {
+      tag,
+      posts: posts
+        .filter((post) => post.data.tags.includes(tag))
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<MainLayout title={`Posts tagged "${tag}" | Subhan Farrakh`} description={`Blog posts about ${tag}`}>
+  <section class="min-h-screen bg-black text-white py-20 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
+        <a href="/blog" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors">
+          ← All Posts
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold">
+          Posts tagged <span class="bg-gradient-to-r from-[#1cd8d2] to-[#00bf8f] bg-clip-text text-transparent">"{tag}"</span>
+        </h1>
+        <p class="text-gray-400 mt-3">{posts.length} post{posts.length !== 1 ? 's' : ''} found</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.id}`}
+            class="group block bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#1cd8d2]/50 transition-all duration-300 hover:-translate-y-1"
+          >
+            {post.data.image && (
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {post.data.tags.slice(0, 3).map((t) => (
+                  <span class:list={[
+                    "text-xs px-2 py-1 rounded-full",
+                    t === tag ? "bg-[#1cd8d2]/20 text-[#1cd8d2]" : "bg-white/10 text-gray-300"
+                  ]}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <h2 class="text-xl font-bold mb-2 group-hover:text-[#1cd8d2] transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-2">
+                {post.data.description}
+              </p>
+              <time class="text-xs text-gray-500" datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,78 @@
+---
+import BlogLayout from '@layouts/BlogLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prevPost: posts[index + 1] ?? null,
+      nextPost: posts[index - 1] ?? null,
+    },
+  }));
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+
+// Calculate reading time from rendered content
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+// BlogPosting JSON-LD
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
+  author: {
+    '@type': 'Person',
+    name: post.data.author,
+  },
+  ...(post.data.image && { image: post.data.image }),
+  keywords: post.data.tags.join(', '),
+  wordCount,
+};
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  author={post.data.author}
+  tags={post.data.tags}
+  image={post.data.image}
+  readingTime={readingTime}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+  </Fragment>
+  <Content />
+  <nav slot="post-nav" class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
+    {prevPost ? (
+      <a
+        href={`/blog/${prevPost.id}`}
+        class="group flex flex-col p-4 bg-white/5 rounded-xl border border-white/10 hover:border-[#1cd8d2]/50 transition-colors"
+      >
+        <span class="text-xs text-gray-500 mb-1">← Previous</span>
+        <span class="text-sm font-semibold group-hover:text-[#1cd8d2] transition-colors">{prevPost.data.title}</span>
+      </a>
+    ) : <div />}
+    {nextPost ? (
+      <a
+        href={`/blog/${nextPost.id}`}
+        class="group flex flex-col items-end text-right p-4 bg-white/5 rounded-xl border border-white/10 hover:border-[#1cd8d2]/50 transition-colors"
+      >
+        <span class="text-xs text-gray-500 mb-1">Next →</span>
+        <span class="text-sm font-semibold group-hover:text-[#1cd8d2] transition-colors">{nextPost.data.title}</span>
+      </a>
+    ) : <div />}
+  </nav>
+</BlogLayout>

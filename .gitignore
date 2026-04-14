@@ -71,3 +71,8 @@ project-files-export.json
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# generated types
+.astro/
+

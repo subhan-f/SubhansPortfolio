@@ -1,0 +1,24 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { Hero } from '@components/sections/Hero';
+import { About } from '@components/sections/About';
+import { Skills } from '@components/sections/Skills';
+import { Projects } from '@components/sections/Projects';
+import { Experience } from '@components/sections/Experience';
+import { Testimonials } from '@components/sections/Testimonials';
+import { ContactForm } from '@components/sections/Contact';
+import { FAQ } from '@components/sections/FAQ';
+import { IntroAnimation } from '@components/shared/IntroAnimation';
+---
+
+<MainLayout title="Subhan Farrakh – AI Automation Engineer">
+  <IntroAnimation client:load />
+  <Hero shouldAnimate={true} client:load />
+  <About client:visible />
+  <Skills client:visible />
+  <Projects client:visible />
+  <Experience client:visible />
+  <Testimonials client:visible />
+  <ContactForm client:visible />
+  <FAQ client:visible />
+</MainLayout>

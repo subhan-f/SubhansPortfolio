@@ -1,87 +1,137 @@
-# Welcome to React Router!
+# Subhan Farrakh Portfolio
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Modern portfolio and blog built with Astro + React islands, Tailwind CSS v4, and Framer Motion.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Production site: https://subhanfarrakh.com
+
+## Tech Stack
+
+- Astro 5
+- React 19 (islands)
+- Tailwind CSS v4
+- Framer Motion
+- MDX + Astro Content Collections (blog)
+- RSS + Sitemap
+- EmailJS (contact form)
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Multi-page portfolio (Home, About, Projects, Experience, Skills, Testimonials, FAQ, Contact)
+- Dedicated blog with tags and individual post pages
+- Animated React sections with progressive hydration
+- SEO metadata, Open Graph, Twitter cards, JSON-LD
+- Cloudinary-hosted media assets (images, OG image, favicons)
+- Accessible overlay navigation with focus management
+
+## Project Structure
+
+```text
+.
+├── public/
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── sections/
+│   │   └── shared/
+│   ├── content/
+│   │   └── blog/
+│   ├── data/
+│   ├── hooks/
+│   ├── layouts/
+│   │   └── MainLayout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── projects/
+│   │   ├── experience/
+│   │   ├── blog/
+│   │   └── rss.xml.ts
+│   └── styles/
+├── astro.config.mjs
+├── tsconfig.json
+└── package.json
+```
+
+## Routes
+
+- `/`
+- `/about`
+- `/projects`
+- `/projects/[slug]`
+- `/experience`
+- `/experience/[slug]`
+- `/blog`
+- `/blog/[slug]`
+- `/blog/tag/[tag]`
+- `/skills`
+- `/testimonials`
+- `/faq`
+- `/contact`
 
 ## Getting Started
 
-### Installation
-
-Install the dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+2. Start local development server:
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+3. Build for production:
 
 ```bash
 npm run build
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+4. Preview production build:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+npm run preview
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Scripts
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start local dev server (`http://localhost:4321`) |
+| `npm run build` | Create production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro -- --help` | View Astro CLI help |
 
-### DIY Deployment
+## Environment Variables
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+Create a `.env` file at the project root for contact form integration:
 
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+```env
+PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-## Styling
+Notes:
+- Variables must be prefixed with `PUBLIC_` to be available on the client.
+- Contact form submission uses EmailJS in `src/components/sections/Contact.tsx`.
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+## Content Management
 
----
+- Blog posts live in `src/content/blog/` as MDX files.
+- Collection schema is defined in `src/content.config.ts`.
+- Add tags in frontmatter to automatically generate tag pages.
 
-Built with ❤️ using React Router.
+## SEO and Assets
+
+- Site URL is configured in `astro.config.mjs`.
+- Global metadata, OG image, favicon, and structured data are configured in `src/layouts/MainLayout.astro`.
+- Sitemap is generated during build.
+- RSS feed is generated at `/rss.xml`.
+
+## Notes
+
+- Path aliases are configured in `tsconfig.json` (`@components/*`, `@data/*`, etc.).
+- Main hero section component is `Hero` (`src/components/sections/Hero.tsx`).
