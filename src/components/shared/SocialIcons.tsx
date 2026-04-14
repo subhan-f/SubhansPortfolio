@@ -46,7 +46,7 @@ export const SocialIcons = ({ className }: { className?: string }) => (
         key={label}
         href={href}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="ugc noopener noreferrer"
         aria-label={label}
         variants={glowVariants}
         initial="initial"

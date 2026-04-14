@@ -109,6 +109,7 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
             >
               <a
                 href="#projects"
+                aria-label="View Subhan Farrakh's featured projects"
                 className="px-6 py-3 rounded-full font-medium text-lg text-white bg-linear-to-r from-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-transform"
               >
                 View My Work
@@ -116,6 +117,7 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
               <a
                 href="/Resume.pdf"
                 download
+                aria-label="Download Subhan Farrakh's resume"
                 className="px-6 py-3 rounded-full font-medium text-lg text-black bg-white shadow-lg hover:bg-gray-200 hover:scale-105 transition-transform"
               >
                 My Resume
@@ -155,6 +157,8 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
           <motion.img
             src="https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/avatar_yz6dae.png"
             alt="Subhan Farrakh"
+            width={650}
+            height={760}
             loading="lazy"
             className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl max-w-full max-h-[90vh]"
             style={{

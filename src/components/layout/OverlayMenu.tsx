@@ -57,14 +57,21 @@ export const OverlayMenu = ({ isOpen, onClose }: OverlayMenuProps) => {
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+      // Hide main content from assistive technology when menu is open
+      const mainContent = document.getElementById("main-content");
+      if (mainContent) mainContent.setAttribute("aria-hidden", "true");
       // Focus the close button when menu opens
       setTimeout(() => closeButtonRef.current?.focus(), 100);
     } else {
       document.body.style.overflow = "";
+      const mainContent = document.getElementById("main-content");
+      if (mainContent) mainContent.removeAttribute("aria-hidden");
     }
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+      const mainContent = document.getElementById("main-content");
+      if (mainContent) mainContent.removeAttribute("aria-hidden");
     };
   }, [isOpen, handleKeyDown]);
 

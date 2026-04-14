@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { usePageVisibility } from "@hooks/usePageVisibility";
+import { useIsMobile } from "@hooks/useIsMobile";
 
 interface Particle {
   x: number;
@@ -17,6 +18,7 @@ export const ParticlesBackground = () => {
   const animationRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
   const isVisible = usePageVisibility();
+  const isMobile = useIsMobile("(max-width: 768px)");
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,7 +27,7 @@ export const ParticlesBackground = () => {
     if (!ctx) return;
 
     const colors = ["rgba(255, 255, 255, 0.7)"];
-    const particlesCount = 50;
+    const particlesCount = isMobile ? 15 : 50;
 
     class ParticleImpl implements Particle {
       x: number;
@@ -98,7 +100,7 @@ export const ParticlesBackground = () => {
       window.removeEventListener("resize", handleResize);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [isVisible]);
+  }, [isVisible, isMobile]);
 
   return (
     <canvas

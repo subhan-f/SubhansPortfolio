@@ -13,7 +13,7 @@ export const Footer = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h1
+        <p
           className="font-semibold leading-none text-white text-center select-none whitespace-normal sm:whitespace-nowrap"
           style={{
             fontSize: 'clamp(3rem,5vw,14rem)',
@@ -23,7 +23,7 @@ export const Footer = () => {
           }}
         >
           Subhan Farrakh
-        </h1>
+        </p>
         <div className="h-0.5 w-64 md:w-64 sm:w-32 rounded-full bg-[linear-gradient(90deg,transparent_0%,#0d58cc_20%,#67e8f9_50%,#34d399_80%,transparent_100%)]" />
         <SocialIcons />
         <p className="text-gray-300 italic max-w-xl">

@@ -19,11 +19,20 @@ const schema = {
   name: project.title,
   description: project.fullDescription,
   url: `https://subhanfarrakh.com/projects/${project.slug}`,
-  image: `https://subhanfarrakh.com${project.image}`,
-  author: { "@type": "Person", name: "Subhan Farrakh" },
-  datePublished: project.year,
+  image: project.image,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
+  datePublished: project.year,
+  creator: {
+    "@type": "Person",
+    name: "Subhan Farrakh",
+    sameAs: "https://subhanfarrakh.com/#person",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
 };
 ---
 
@@ -32,7 +41,7 @@ const schema = {
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <div class="max-w-4xl mx-auto">
-      <a href="/projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors">
+      <a href="/projects" aria-label="Back to all projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors">
         ← Back to Projects
       </a>
 
@@ -109,6 +118,7 @@ const schema = {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Visit the live ${project.title} project`}
               class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors"
             >
               Visit Live Project
@@ -116,6 +126,7 @@ const schema = {
           )}
           <a
             href="/contact"
+            aria-label="Contact Subhan Farrakh to start your project"
             class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-lg font-semibold border border-white/20 hover:bg-white/20 transition-colors"
           >
             Start Your Project
