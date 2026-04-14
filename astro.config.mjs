@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import Analytics from '@vercel/analytics/astro';
 
 export default defineConfig({
   site: 'https://subhanfarrakh.com',
@@ -11,6 +12,7 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap(),
+    Analytics(),
   ],
   vite: {
     plugins: [tailwindcss()],

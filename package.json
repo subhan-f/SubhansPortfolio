@@ -15,6 +15,7 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.3.0",
     "@emailjs/browser": "^4.4.1",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^5.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
