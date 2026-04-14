@@ -6,6 +6,8 @@ import { Footer } from '@components/layout/Footer';
 import { CustomCursor } from '@components/shared/CustomCursor';
 import { WhatsAppButton } from '@components/shared/WhatsAppButton';
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   title: string;
@@ -73,5 +75,7 @@ const currentPath = Astro.url.pathname;
     </main>
     <WhatsAppButton client:load />
     <Footer client:visible />
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
