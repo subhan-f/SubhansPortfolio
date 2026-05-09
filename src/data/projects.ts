@@ -46,16 +46,16 @@ export const projects: Project[] = [
     gallery: [
       'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
     ],
-    bgColor: '#3884d3',
+    bgColor: '#7c3aed',
   },
 
   {
     slug: 'kidskulturspass',
-    title: 'KidsKulturSpass',
+    title: 'KKS',
     shortDescription: 'Operational dashboard and workflow automation system for a German client.',
     fullDescription:
       'Developed automation systems and operational dashboards for KidsKulturSpass to streamline administrative workflows, calendar management, CRM operations, and email-based processes. The project involved integrating multiple SaaS platforms and reducing repetitive operational tasks through automation.',
-    client: 'KidsKulturSpass',
+    client: 'Antonio Macan - KidsKulturSpass',
     year: '2025',
     role: 'Automation & Technical Operations Developer',
     technologies: [
@@ -81,11 +81,8 @@ export const projects: Project[] = [
       'Implemented centralized operational workflows with API integrations and automated event-driven processes.',
     outcome:
       'Reduced manual operational overhead and improved workflow efficiency for internal business operations.',
-    image:
-      'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg',
-    gallery: [
-      'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg',
-    ],
+    image: 'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324625/kks_tkjufl.jpg',
+    gallery: ['https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324625/kks_tkjufl.jpg'],
     bgColor: '#0d4d3d',
   },
   {
