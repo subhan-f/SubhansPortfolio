@@ -51,7 +51,7 @@ export const projects: Project[] = [
 
   {
     slug: 'kidskulturspass',
-    title: 'KidsKulturSpass Automation System',
+    title: 'KidsKulturSpass',
     shortDescription: 'Operational dashboard and workflow automation system for a German client.',
     fullDescription:
       'Developed automation systems and operational dashboards for KidsKulturSpass to streamline administrative workflows, calendar management, CRM operations, and email-based processes. The project involved integrating multiple SaaS platforms and reducing repetitive operational tasks through automation.',
@@ -90,7 +90,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'video-motion-magnification',
-    title: 'AI-Based Video Motion Magnification System',
+    title: 'Eulerian Video Motion Mag',
     shortDescription:
       'Computer vision and AI-based predictive maintenance system using Eulerian Video Magnification.',
     fullDescription:
@@ -121,11 +121,8 @@ export const projects: Project[] = [
       'Implemented Eulerian Video Magnification techniques combined with computer vision preprocessing and machine learning workflows.',
     outcome:
       'Successfully demonstrated amplified motion visualization for predictive maintenance and anomaly detection research.',
-    image:
-      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
-    gallery: [
-      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
-    ],
+    image: 'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324104/vid-mag_d3ywqs.png',
+    gallery: ['https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324104/vid-mag_d3ywqs.png'],
     bgColor: '#7b3fe4',
   },
 ];
