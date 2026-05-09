@@ -120,6 +120,6 @@ export const projects: Project[] = [
       'Successfully demonstrated amplified motion visualization for predictive maintenance and anomaly detection research.',
     image: 'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324104/vid-mag_d3ywqs.png',
     gallery: ['https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778324104/vid-mag_d3ywqs.png'],
-    bgColor: '#7b3fe4',
+    bgColor: '#dc9317',
   },
 ];
