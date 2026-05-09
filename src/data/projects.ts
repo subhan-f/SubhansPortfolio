@@ -16,90 +16,116 @@ export interface Project {
   gallery?: string[];
   bgColor: string;
 }
-
 export const projects: Project[] = [
   {
-    slug: 'mk-studio',
-    title: 'MK Studio',
-    shortDescription: 'Creative agency website with CMS integration.',
+    slug: 'jorh',
+    title: 'Jorh',
+    shortDescription: 'Microservices-based link management and analytics platform.',
     fullDescription:
-      'MK Studio is a creative design agency based in Europe. I built their modern portfolio website with a custom CMS, allowing them to easily update projects, team members, and blog posts. The site features smooth animations, optimized image loading, and a contact form integrated with their CRM.',
-    client: 'MK Studio',
-    year: '2024',
-    role: 'Full Stack Developer',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      'Jorh is a scalable link management platform designed for creating, managing, and analyzing shortened URLs with modular backend services. The platform was built using a microservices architecture with separate services for authentication, analytics, redirects, and user management. The project focused heavily on backend scalability, API-driven workflows, and maintainable system design.',
+    client: 'Personal Project',
+    year: '2025',
+    role: 'Backend & System Architecture Developer',
+    technologies: ['Node.js', 'PostgreSQL', 'Docker', 'JWT', 'Express', 'Redis', 'Microservices'],
     features: [
-      'Custom CMS for portfolio and blog',
-      'Server-side rendering for SEO',
-      'Image optimization and lazy loading',
-      'Contact form with email notification',
-      'Admin dashboard for content management',
+      'Short URL generation and management',
+      'Analytics and click tracking',
+      'Authentication and user management',
+      'API-driven architecture',
+      'Scalable microservices structure',
+      'Containerized deployment workflows',
     ],
     challenges:
-      'The client needed an intuitive interface to manage content without technical knowledge.',
+      'Designing a modular architecture capable of scaling independently while maintaining efficient inter-service communication.',
     solution:
-      'Built a headless CMS with a simple admin panel using React and MongoDB.',
+      'Implemented a microservices-based backend with isolated services, JWT authentication, Redis caching, and Dockerized deployment.',
     outcome:
-      'Client updates content weekly without developer assistance, saving hours per month.',
-    link: 'https://mk.studio',
-    image: 'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg',
-    gallery: ['https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg', "https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/photo1_flzlue.jpg"],
+      'Built a scalable backend architecture with improved maintainability and operational flexibility.',
+    image:
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
+    gallery: [
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
+    ],
+    bgColor: '#3884d3',
+  },
+
+  {
+    slug: 'kidskulturspass',
+    title: 'KidsKulturSpass Automation System',
+    shortDescription: 'Operational dashboard and workflow automation system for a German client.',
+    fullDescription:
+      'Developed automation systems and operational dashboards for KidsKulturSpass to streamline administrative workflows, calendar management, CRM operations, and email-based processes. The project involved integrating multiple SaaS platforms and reducing repetitive operational tasks through automation.',
+    client: 'KidsKulturSpass',
+    year: '2025',
+    role: 'Automation & Technical Operations Developer',
+    technologies: [
+      'React',
+      'Node.js',
+      'MongoDB',
+      'Google APIs',
+      'HubSpot',
+      'Make.com',
+      'Google Cloud',
+    ],
+    features: [
+      'Operational dashboard development',
+      'Google Calendar integrations',
+      'CRM workflow automation',
+      'Email automation systems',
+      'Cloud-based workflow management',
+      'Internal operational tooling',
+    ],
+    challenges:
+      'Managing multiple interconnected workflows while ensuring reliable automation across cloud services.',
+    solution:
+      'Implemented centralized operational workflows with API integrations and automated event-driven processes.',
+    outcome:
+      'Reduced manual operational overhead and improved workflow efficiency for internal business operations.',
+    image:
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg',
+    gallery: [
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/img1_fbin6l.jpg',
+    ],
     bgColor: '#0d4d3d',
   },
   {
-    slug: 'gamily',
-    title: 'Gamily',
-    shortDescription: 'Family organization and chore management app.',
+    slug: 'video-motion-magnification',
+    title: 'AI-Based Video Motion Magnification System',
+    shortDescription:
+      'Computer vision and AI-based predictive maintenance system using Eulerian Video Magnification.',
     fullDescription:
-      'Gamily helps families manage chores, allowances, and schedules in one place. I developed the backend API and real-time notification system. The app includes parent/child roles, reward tracking, and calendar sync.',
-    client: 'Gamily Inc.',
+      'Developed an AI-assisted predictive maintenance system focused on detecting subtle abnormal motor movements using Eulerian Video Magnification and computer vision techniques. The project processed real-time video streams to amplify invisible motion patterns in AC induction motors and explored machine learning-based analysis for fault detection and operational monitoring.',
+    client: 'Final Year Project',
     year: '2025',
-    role: 'Backend & API Developer',
-    technologies: ['Node.js', 'PostgreSQL', 'Socket.io', 'JWT', 'Docker'],
+    role: 'Computer Vision & AI Developer',
+    technologies: [
+      'Python',
+      'OpenCV',
+      'TensorFlow',
+      'Keras',
+      'Google Colab',
+      'NumPy',
+      'Computer Vision',
+    ],
     features: [
-      'Real-time chore assignment and completion tracking',
-      'Allowance and reward system',
-      'Family calendar with reminders',
-      'Push notifications for task deadlines',
-      'Parental controls and activity logs',
+      'Eulerian video motion amplification',
+      'Real-time video processing',
+      'Abnormal motion detection',
+      'Machine learning-based analysis',
+      'Predictive maintenance workflow',
+      'Signal amplification and visualization',
     ],
     challenges:
-      'Real-time sync across multiple devices and user roles required careful data architecture.',
+      'Processing subtle motion variations accurately while maintaining stable real-time video amplification and analysis.',
     solution:
-      'Implemented WebSockets with Socket.io and a PostgreSQL database with row-level security.',
+      'Implemented Eulerian Video Magnification techniques combined with computer vision preprocessing and machine learning workflows.',
     outcome:
-      'Over 500 families use the app daily, reducing missed chores by 40%.',
-    link: 'https://gamilyapp.com',
-    image: "https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601089/img2_rnallk.jpg",
-    gallery: ["https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601089/img2_rnallk.jpg", "https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601090/photo2_tp1d4g.jpg"],
-    bgColor: '#3884d3',
-  },
-  {
-    slug: 'hungry-tiger',
-    title: 'Hungry Tiger',
-    shortDescription: 'Restaurant ordering and delivery platform.',
-    fullDescription:
-      'Hungry Tiger is a multi-vendor food ordering platform connecting restaurants with customers. I built the vendor dashboard, order management system, and integrated payment gateways.',
-    client: 'Hungry Tiger',
-    year: '2024',
-    role: 'Full Stack Developer',
-    technologies: ['React', 'Redux', 'Node.js', 'Stripe', 'MongoDB'],
-    features: [
-      'Multi-vendor restaurant onboarding',
-      'Real-time order tracking',
-      'Secure payment processing',
-      'Vendor analytics and reporting',
-      'Customer reviews and ratings',
+      'Successfully demonstrated amplified motion visualization for predictive maintenance and anomaly detection research.',
+    image:
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
+    gallery: [
+      'https://res.cloudinary.com/dkcdwyrjl/image/upload/v1778323254/Screenshot_2026-05-09_at_15-40-26_Jorh_Dashboard_pymytq.png',
     ],
-    challenges:
-      'Handling concurrent orders during peak hours without performance degradation.',
-    solution:
-      'Optimized database queries, implemented Redis caching, and used queue workers for order processing.',
-    outcome:
-      'Platform processes 200+ orders daily with 99.9% uptime.',
-    link: 'https://hungrytiger.com',
-    image: "https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601089/img3_cqzkvj.jpg",
-    gallery: ["https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601089/img3_cqzkvj.jpg", 'https://res.cloudinary.com/dkcdwyrjl/image/upload/q_auto/f_auto/v1775601093/photo3_hiavxb.jpg'],
-    bgColor: '#dc9317',
+    bgColor: '#7b3fe4',
   },
 ];
