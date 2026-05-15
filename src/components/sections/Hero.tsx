@@ -95,8 +95,8 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
               animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
             >
-              I save businesses hundreds of hours by automating workflows with AI by eliminating
-              manual tasks, streamlining operations, and letting you focus on growth.
+              I save businesses 100+ hours by automating workflows, eliminating manual tasks,
+              streamlining operations, and letting you focus on growth.
             </motion.p>
 
             <motion.div
