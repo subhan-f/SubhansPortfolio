@@ -14,6 +14,8 @@
 
 ## Tech Stack
 
+<div align="center">
+
 | Layer | Technology |
 |---|---|
 | Framework | Astro 6 with View Transitions |
@@ -28,6 +30,7 @@
 | Analytics | Vercel Analytics + Speed Insights |
 | Feeds | RSS + XML Sitemap |
 
+</div>
 ---
 
 ## Features
