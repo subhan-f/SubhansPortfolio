@@ -31,6 +31,7 @@
 | Feeds | RSS + XML Sitemap |
 
 </div>
+
 ---
 
 ## Features
