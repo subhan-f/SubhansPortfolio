@@ -1,13 +1,13 @@
-import { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
-import { ParticlesBackground } from "@components/shared/ParticlesBackground";
-import { SocialIcons } from "@components/shared/SocialIcons";
+import { useState, useEffect, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { ParticlesBackground } from '@components/shared/ParticlesBackground';
+import { SocialIcons } from '@components/shared/SocialIcons';
 
 const roles = [
-  "AI Automation Engineer",
-  "Agentic AI Developer",
-  "AI/ML Engineer",
-  "MERN Stack Developer",
+  'AI Automation Engineer',
+  'Agentic AI Developer',
+  'AI/ML Engineer',
+  'MERN Stack Developer',
 ];
 
 interface HeroProps {
@@ -69,11 +69,9 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
               <span
                 className="inline-block w-0.5 ml-1 bg-white align-middle"
                 style={{
-                  height: "1em",
+                  height: '1em',
                   animation:
-                    shouldAnimate && !isTypingActive
-                      ? "blink 1s steps(2, start) infinite"
-                      : "none",
+                    shouldAnimate && !isTypingActive ? 'blink 1s steps(2, start) infinite' : 'none',
                 }}
               />
             </motion.div>
@@ -97,7 +95,7 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
               animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
             >
-              I save businesses hundreds of hours by automating workflows with AI — eliminating
+              I save businesses hundreds of hours by automating workflows with AI by eliminating
               manual tasks, streamlining operations, and letting you focus on growth.
             </motion.p>
 
@@ -140,17 +138,15 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
             className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
             style={{
               right: 0,
-              width: "min(22vw, 410px)",
-              height: "min(40vw, 760px)",
-              borderRadius: "50%",
-              filter: "blur(48px)",
-              background: "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)",
+              width: 'min(22vw, 410px)',
+              height: 'min(40vw, 760px)',
+              borderRadius: '50%',
+              filter: 'blur(48px)',
+              background: 'conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)',
             }}
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={
-              shouldAnimate
-                ? { opacity: 0.3, y: 0, scale: 1 }
-                : { opacity: 0, y: 40, scale: 0.98 }
+              shouldAnimate ? { opacity: 0.3, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.98 }
             }
             transition={{ duration: 0.6 }}
           />
@@ -163,13 +159,11 @@ export const Hero = ({ shouldAnimate }: HeroProps) => {
             className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none drop-shadow-xl max-w-full max-h-[90vh]"
             style={{
               right: 0,
-              width: "min(40vw, 650px)",
+              width: 'min(40vw, 650px)',
             }}
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={
-              shouldAnimate
-                ? { opacity: 1, y: 0, scale: 1 }
-                : { opacity: 0, y: 40, scale: 0.98 }
+              shouldAnimate ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.98 }
             }
             transition={{ duration: 0.6 }}
           />
