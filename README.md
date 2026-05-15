@@ -14,7 +14,6 @@
 
 ## Tech Stack
 
-<div align="center">
 
 | Layer | Technology |
 |---|---|
@@ -30,7 +29,7 @@
 | Analytics | Vercel Analytics + Speed Insights |
 | Feeds | RSS + XML Sitemap |
 
-</div>
+
 
 ---
 
