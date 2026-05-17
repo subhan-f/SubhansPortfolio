@@ -1,16 +1,15 @@
-name: Deploy
+name: Deploy CMS → Cloud Run
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'apps/cms/**'
 
 jobs:
-  deploy-cms:
-    name: Deploy CMS → Cloud Run
+  deploy:
+    name: Build & deploy Strapi
     runs-on: ubuntu-latest
-    if: >
-      contains(toJson(github.event.commits.*.modified), 'apps/cms/') ||
-      contains(toJson(github.event.commits.*.added), 'apps/cms/')
     steps:
       - uses: actions/checkout@v4
 
@@ -52,18 +51,3 @@ jobs:
             --update-secrets=DATABASE_HOST=STRAPI_DATABASE_HOST:latest \
             --update-secrets=DATABASE_PASSWORD=STRAPI_DATABASE_PASSWORD:latest \
             --set-env-vars=HOST=0.0.0.0,NODE_ENV=production,DATABASE_CLIENT=postgres,DATABASE_PORT=5432,DATABASE_NAME=postgres,DATABASE_USERNAME=postgres,DATABASE_SSL=true,DATABASE_SSL_REJECT_UNAUTHORIZED=false
-
-  deploy-web:
-    name: Deploy Web → Vercel
-    runs-on: ubuntu-latest
-    if: >
-      contains(toJson(github.event.commits.*.modified), 'apps/web/') ||
-      contains(toJson(github.event.commits.*.added), 'apps/web/')
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy to Vercel
-        run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd=apps/web
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
