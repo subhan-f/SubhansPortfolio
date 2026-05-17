@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-display: "Roboto", sans-serif;
+}
+
+@layer utilities {
+  .gradient {
+    background: linear-gradient(-45deg, #302b63, #00bf8f, #1cd8d2);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+/* Blog prose styles */
+.prose {
+  color: #d1d5db;
+  line-height: 1.8;
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.prose h1 { font-size: 2.25rem; }
+.prose h2 { font-size: 1.875rem; }
+.prose h3 { font-size: 1.5rem; }
+.prose p { margin-bottom: 1.25em; }
+.prose a {
+  color: #1cd8d2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: #00bf8f; }
+.prose strong { color: #fff; }
+.prose ul, .prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+.prose li { margin-bottom: 0.5em; }
+.prose code {
+  background: rgba(255,255,255,0.1);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+.prose pre {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.5rem;
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 1.25em;
+}
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+.prose blockquote {
+  border-left: 3px solid #1cd8d2;
+  padding-left: 1em;
+  margin-left: 0;
+  margin-bottom: 1.25em;
+  color: #9ca3af;
+  font-style: italic;
+}
+.prose img {
+  border-radius: 0.75rem;
+  margin: 1.5em 0;
+}

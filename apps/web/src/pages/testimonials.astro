@@ -1,0 +1,22 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { Testimonials } from '@components/sections/Testimonials';
+import { fetchStrapi, getStrapiMedia } from '@lib/strapi';
+import type { StrapiList, StrapiTestimonial } from '@lib/strapi';
+
+const { data: raw } = await fetchStrapi<StrapiList<StrapiTestimonial>>(
+  '/testimonials',
+  { 'populate[image]': 'true' }
+);
+
+const items = raw.map((t) => ({
+  name: t.name,
+  role: t.role,
+  review: t.review,
+  image: getStrapiMedia(t.image?.url),
+}));
+---
+
+<MainLayout title="Testimonials | Subhan Farrakh" description="What clients and colleagues say about working with Subhan Farrakh.">
+  <Testimonials items={items} client:visible />
+</MainLayout>
