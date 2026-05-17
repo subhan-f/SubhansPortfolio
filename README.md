@@ -1,159 +1,187 @@
-# Turborepo starter
+# Subhan Farrakh — Portfolio
 
-This Turborepo starter is maintained by the Turborepo core team.
+> AI Automation Engineer · Full-Stack Developer · [subhanfarrakh.com](https://subhanfarrakh.com)
 
-## Using this example
+![Portfolio Demo](public/demo.gif)
 
-Run the following command:
+[![Live](https://img.shields.io/badge/Live-subhanfarrakh.com-0d9488?style=flat-square)](https://subhanfarrakh.com)
+[![Astro](https://img.shields.io/badge/Astro-6-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-```sh
-npx create-turbo@latest
+---
+
+## Tech Stack
+
+| Layer      | Technology                        |
+| ---------- | --------------------------------- |
+| Framework  | Astro 6 with View Transitions     |
+| UI         | React 19 (island architecture)    |
+| Styling    | Tailwind CSS v4 (Vite plugin)     |
+| Animation  | Framer Motion 12                  |
+| Content    | MDX + Astro Content Collections   |
+| Validation | Zod 4                             |
+| Icons      | Lucide React, React Icons         |
+| Contact    | EmailJS                           |
+| Media      | Cloudinary (images, OG, favicons) |
+| Analytics  | Vercel Analytics + Speed Insights |
+| Feeds      | RSS + XML Sitemap                 |
+
+---
+
+## Features
+
+- **Island architecture** — React components hydrated on demand (`client:load`, `client:visible`) for optimal performance
+- **Animated sections** — Framer Motion 12 transitions with a shared animation library (`src/lib/animations.ts`)
+- **Intro animation** — Full-screen entry sequence on first load
+- **Custom cursor** — Gradient glow cursor on desktop (automatically disabled on touch/tablet devices ≤1023px)
+- **Particles background** — Canvas-based particle system
+- **Scroll timeline** — Scroll-driven progress indicator
+- **WhatsApp float button** — Quick contact shortcut on all pages
+- **Blog** — MDX posts with frontmatter tags, auto-generated tag pages, and RSS feed
+- **SEO** — Canonical URLs, Open Graph, Twitter cards, JSON-LD structured data, XML sitemap
+- **Security headers** — `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` set in Astro config
+- **Custom 404** — Branded not-found page
+- **Accessible navigation** — Overlay menu with focus management
+
+---
+
+## Project Structure
+
+```text
+.
+├── public/
+│   ├── demo.gif
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── layout/         # Navbar, Footer, OverlayMenu
+│   │   ├── pages/          # Page-level composite components
+│   │   ├── sections/       # Hero, About, Projects, Experience, Skills,
+│   │   │                   # Testimonials, FAQ, Contact
+│   │   └── shared/         # CustomCursor, IntroAnimation, ParticlesBackground,
+│   │                       # ScrollTimeline, SocialIcons, WhatsAppButton
+│   ├── content/
+│   │   └── blog/           # MDX blog posts
+│   ├── data/
+│   │   ├── experiences.ts
+│   │   ├── myData.ts       # JSON-LD / structured data
+│   │   ├── projects.ts
+│   │   └── testimonials.ts
+│   ├── hooks/
+│   │   ├── useIsMobile.ts
+│   │   └── usePageVisibility.ts
+│   ├── layouts/
+│   │   ├── BlogLayout.astro
+│   │   └── MainLayout.astro
+│   ├── lib/
+│   │   ├── animations.ts   # Shared Framer Motion variants
+│   │   └── utils.ts
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   ├── experience/
+│   │   ├── faq.astro
+│   │   ├── projects/
+│   │   ├── skills.astro
+│   │   ├── testimonials.astro
+│   │   ├── blog/
+│   │   ├── rss.xml.ts
+│   │   └── 404.astro
+│   ├── styles/
+│   │   └── global.css
+│   └── content.config.ts
+├── astro.config.mjs
+├── tsconfig.json
+├── package.json
+└── pnpm-lock.yaml
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## Routes
 
-### Apps and Packages
+| Route                | Description                               |
+| -------------------- | ----------------------------------------- |
+| `/`                  | Home — hero, about summary, featured work |
+| `/about`             | Full about page                           |
+| `/projects`          | Project listing                           |
+| `/projects/[slug]`   | Individual project detail                 |
+| `/experience`        | Work history listing                      |
+| `/experience/[slug]` | Individual experience detail              |
+| `/skills`            | Skills overview                           |
+| `/testimonials`      | Client testimonials                       |
+| `/faq`               | Frequently asked questions                |
+| `/contact`           | Contact form (EmailJS)                    |
+| `/blog`              | Blog index                                |
+| `/blog/[slug]`       | Individual blog post                      |
+| `/blog/tag/[tag]`    | Posts filtered by tag                     |
+| `/rss.xml`           | RSS feed                                  |
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+---
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Getting Started
 
-### Utilities
+**Prerequisites:** Node.js ≥ 18, [pnpm](https://pnpm.io)
 
-This Turborepo has some additional tools already setup for you:
+```bash
+# Install dependencies
+pnpm install
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+# Start development server (http://localhost:4321)
+pnpm dev
 
-### Build
+# Build for production
+pnpm build
 
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+# Preview production build locally
+pnpm preview
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+## Scripts
+
+| Command                | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `pnpm dev`             | Start local dev server at `http://localhost:4321` |
+| `pnpm build`           | Create production build in `dist/`                |
+| `pnpm preview`         | Preview the production build locally              |
+| `pnpm astro -- --help` | View Astro CLI help                               |
+
+---
+
+## Environment Variables
+
+Create a `.env` file at the project root:
+
+```env
+PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+> Variables must be prefixed with `PUBLIC_` to be accessible in client-side code. These are consumed by `src/components/sections/Contact.tsx`.
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+---
 
-```sh
-turbo build --filter=docs
-```
+## Path Aliases
 
-Without global `turbo`:
+Configured in `tsconfig.json`:
 
-```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+| Alias           | Resolves to        |
+| --------------- | ------------------ |
+| `@/*`           | `src/*`            |
+| `@components/*` | `src/components/*` |
+| `@layouts/*`    | `src/layouts/*`    |
+| `@data/*`       | `src/data/*`       |
+| `@lib/*`        | `src/lib/*`        |
+| `@hooks/*`      | `src/hooks/*`      |
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## License
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo dev --filter=web
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+MIT © [Subhan Farrakh](https://subhanfarrakh.com) — see [LICENSE](LICENSE) for details.

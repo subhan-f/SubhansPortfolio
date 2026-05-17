@@ -1,19 +1,23 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # Dependencies
-node_modules
+node_modules/
 .pnp
 .pnp.js
+.pnp.*
+.node_history
 
-# Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Build outputs
+dist/
+build/
+out/
+.next/
+.astro/
 
-# Testing
-coverage
+# Strapi
+exports/
+.strapi/
+.strapi-updater.json
+.strapi-cloud.json
+license.txt
 
 # Turbo
 .turbo
@@ -21,18 +25,97 @@ coverage
 # Vercel
 .vercel
 
-# Build Outputs
-.next/
-out/
-build
-dist
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
 
+# Testing & coverage
+coverage/
+lcov.info
 
-# Debug
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/unplugged
+!.yarn/patches
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-error.log
+
+# Cache & temp
+.tmp
+.tsbuildinfo
+.eslintcache
+pids
+logs
+results
+
+# OS — macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# OS — Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OS — Linux
+*~
+
+# Editors
+.idea/
+nbproject/
+*.swo
+*.swp
+*.swn
+*.swm
+*#
 
 # Misc
-.DS_Store
 *.pem
+ssl/
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Binary / archive formats
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.cab
+*.msi
+*.msm
+*.msp
+*.dll
+*.exe
+*.o
+*.so
+*.class
+*.pid
+*.out
+*.seed
+*.dat
+*.sql
+*.sqlite
+*.sqlite3
