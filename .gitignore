@@ -119,3 +119,4 @@ public/uploads/*
 *.sql
 *.sqlite
 *.sqlite3
+.env*.local
