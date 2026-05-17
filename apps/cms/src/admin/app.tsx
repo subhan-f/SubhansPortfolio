@@ -32,6 +32,9 @@ export default {
         },
       },
     },
+    head: {
+      favicon: '/favicon.svg',
+    },
     locales: [],
   },
   bootstrap(_app: StrapiApp) {},
