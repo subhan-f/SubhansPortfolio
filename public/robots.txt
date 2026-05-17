@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cdn-cgi/
-Disallow: /_astro/
-Disallow: /assets/
-Disallow: /_image/
-
-Sitemap: https://subhanfarrakh.com/sitemap-index.xml
