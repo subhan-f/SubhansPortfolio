@@ -1,78 +1,122 @@
-# --- Node / Dependencies ---
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+.pnp.*
+.node_history
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.astro/
+
+# Strapi
+exports/
+.strapi/
+.strapi-updater.json
+.strapi-cloud.json
+license.txt
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing & coverage
+coverage/
+lcov.info
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-# --- Environment Variables ---
-.env
-.env.local
-.env.development
-.env.production
-.env.*.local
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/unplugged
+!.yarn/patches
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-error.log
 
-# --- Build & Output ---
-/build/
-/dist/
-/.react-router/
-/.next/
-/out/
+# Cache & temp
+.tmp
+.tsbuildinfo
+.eslintcache
+pids
+logs
+results
 
-# --- Cache & Temporary Files ---
-.cache/
-.parcel-cache/
-.vercel/
-*.log
-*.tmp
-*.temp
-*.swp
-*.swo
-
-# --- TypeScript ---
-*.tsbuildinfo
-
-# --- OS & Editor Files ---
+# OS — macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# OS — Windows
 Thumbs.db
+ehthumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 
-# --- IDE ---
-.vscode/
+# OS — Linux
+*~
+
+# Editors
 .idea/
-*.sublime-*
-*.code-workspace
+nbproject/
+*.swo
+*.swp
+*.swn
+*.swm
+*#
 
-# --- Docker ---
-# Ignore local Docker environment file but keep example
-.env.docker
-docker-compose.override.yml
-
-# --- Testing & Coverage ---
-coverage/
-.nyc_output/
-
-# --- Misc ---
-*.local
+# Misc
 *.pem
+ssl/
+public/uploads/*
+!public/uploads/.gitkeep
 
-# --- Project Specific ---
-# Ignore generated sitemap if built locally (should be generated during build)
-/public/sitemap.xml
-/build/client/sitemap.xml
-
-# Practice files & temporary scripts (from user ignorePatterns)
-/practice/
-code.js
-project-files-export.json
-
-# --- Optional Lock Files (uncomment if you prefer to ignore them) ---
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-pnpm-workspace.yaml
-
-# generated types
-.astro/
-
+# Binary / archive formats
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.cab
+*.msi
+*.msm
+*.msp
+*.dll
+*.exe
+*.o
+*.so
+*.class
+*.pid
+*.out
+*.seed
+*.dat
+*.sql
+*.sqlite
+*.sqlite3
+.env*.local

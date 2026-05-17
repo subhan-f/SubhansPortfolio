@@ -1,0 +1,45 @@
+{
+  "name": "cms",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "seed:portfolio": "node ./scripts/seed-portfolio.js",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x"
+  },
+  "strapi": {
+    "uuid": "3f4265c5-5197-41f4-8847-700e99b756ee",
+    "installId": "7332b8d4c1547bc2b7a0c2cc05267690ce2704d4ff60d2b4e3525c31fa5dcad1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@swc/core", "core-js-pure", "esbuild", "sharp"]
+  },
+  "dependencies": {
+    "@strapi/admin": "^5.46.0",
+    "@strapi/plugin-cloud": "^5.46.0",
+    "@strapi/plugin-users-permissions": "^5.46.0",
+    "@strapi/provider-upload-cloudinary": "^5.46.0",
+    "@strapi/strapi": "^5.46.0",
+    "codemirror": "^6.0.2",
+    "fs-extra": "^11.3.5",
+    "mime-types": "^3.0.2",
+    "pg": "^8.20.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.4.1",
+    "zod": "^4.4.3"
+  }
+}

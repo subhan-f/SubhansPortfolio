@@ -14,22 +14,19 @@
 
 ## Tech Stack
 
-
-| Layer | Technology |
-|---|---|
-| Framework | Astro 6 with View Transitions |
-| UI | React 19 (island architecture) |
-| Styling | Tailwind CSS v4 (Vite plugin) |
-| Animation | Framer Motion 12 |
-| Content | MDX + Astro Content Collections |
-| Validation | Zod 4 |
-| Icons | Lucide React, React Icons |
-| Contact | EmailJS |
-| Media | Cloudinary (images, OG, favicons) |
-| Analytics | Vercel Analytics + Speed Insights |
-| Feeds | RSS + XML Sitemap |
-
-
+| Layer      | Technology                        |
+| ---------- | --------------------------------- |
+| Framework  | Astro 6 with View Transitions     |
+| UI         | React 19 (island architecture)    |
+| Styling    | Tailwind CSS v4 (Vite plugin)     |
+| Animation  | Framer Motion 12                  |
+| Content    | MDX + Astro Content Collections   |
+| Validation | Zod 4                             |
+| Icons      | Lucide React, React Icons         |
+| Contact    | EmailJS                           |
+| Media      | Cloudinary (images, OG, favicons) |
+| Analytics  | Vercel Analytics + Speed Insights |
+| Feeds      | RSS + XML Sitemap                 |
 
 ---
 
@@ -106,22 +103,22 @@
 
 ## Routes
 
-| Route | Description |
-|---|---|
-| `/` | Home — hero, about summary, featured work |
-| `/about` | Full about page |
-| `/projects` | Project listing |
-| `/projects/[slug]` | Individual project detail |
-| `/experience` | Work history listing |
-| `/experience/[slug]` | Individual experience detail |
-| `/skills` | Skills overview |
-| `/testimonials` | Client testimonials |
-| `/faq` | Frequently asked questions |
-| `/contact` | Contact form (EmailJS) |
-| `/blog` | Blog index |
-| `/blog/[slug]` | Individual blog post |
-| `/blog/tag/[tag]` | Posts filtered by tag |
-| `/rss.xml` | RSS feed |
+| Route                | Description                               |
+| -------------------- | ----------------------------------------- |
+| `/`                  | Home — hero, about summary, featured work |
+| `/about`             | Full about page                           |
+| `/projects`          | Project listing                           |
+| `/projects/[slug]`   | Individual project detail                 |
+| `/experience`        | Work history listing                      |
+| `/experience/[slug]` | Individual experience detail              |
+| `/skills`            | Skills overview                           |
+| `/testimonials`      | Client testimonials                       |
+| `/faq`               | Frequently asked questions                |
+| `/contact`           | Contact form (EmailJS)                    |
+| `/blog`              | Blog index                                |
+| `/blog/[slug]`       | Individual blog post                      |
+| `/blog/tag/[tag]`    | Posts filtered by tag                     |
+| `/rss.xml`           | RSS feed                                  |
 
 ---
 
@@ -147,12 +144,12 @@ pnpm preview
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `pnpm dev` | Start local dev server at `http://localhost:4321` |
-| `pnpm build` | Create production build in `dist/` |
-| `pnpm preview` | Preview the production build locally |
-| `pnpm astro -- --help` | View Astro CLI help |
+| Command                | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `pnpm dev`             | Start local dev server at `http://localhost:4321` |
+| `pnpm build`           | Create production build in `dist/`                |
+| `pnpm preview`         | Preview the production build locally              |
+| `pnpm astro -- --help` | View Astro CLI help                               |
 
 ---
 
@@ -174,14 +171,14 @@ PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 Configured in `tsconfig.json`:
 
-| Alias | Resolves to |
-|---|---|
-| `@/*` | `src/*` |
+| Alias           | Resolves to        |
+| --------------- | ------------------ |
+| `@/*`           | `src/*`            |
 | `@components/*` | `src/components/*` |
-| `@layouts/*` | `src/layouts/*` |
-| `@data/*` | `src/data/*` |
-| `@lib/*` | `src/lib/*` |
-| `@hooks/*` | `src/hooks/*` |
+| `@layouts/*`    | `src/layouts/*`    |
+| `@data/*`       | `src/data/*`       |
+| `@lib/*`        | `src/lib/*`        |
+| `@hooks/*`      | `src/hooks/*`      |
 
 ---
 

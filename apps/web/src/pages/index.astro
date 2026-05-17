@@ -1,0 +1,54 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { Hero } from '@components/sections/Hero';
+import { About } from '@components/sections/About';
+import { Skills } from '@components/sections/Skills';
+import { Projects } from '@components/sections/Projects';
+import { Experience } from '@components/sections/Experience';
+import { Testimonials } from '@components/sections/Testimonials';
+import { ContactForm } from '@components/sections/Contact';
+import { FAQ } from '@components/sections/FAQ';
+import { IntroAnimation } from '@components/shared/IntroAnimation';
+import { fetchStrapi, getStrapiMedia } from '@lib/strapi';
+import type { StrapiList, StrapiProject, StrapiExperience, StrapiTestimonial } from '@lib/strapi';
+
+const [projectsRes, experiencesRes, testimonialsRes] = await Promise.all([
+  fetchStrapi<StrapiList<StrapiProject>>('/projects', { 'populate[image]': 'true', 'sort': 'publishedAt:desc', 'pagination[pageSize]': '3' }),
+  fetchStrapi<StrapiList<StrapiExperience>>('/experiences', { 'sort': 'publishedAt:desc' }),
+  fetchStrapi<StrapiList<StrapiTestimonial>>('/testimonials', { 'populate[image]': 'true' }),
+]);
+
+const projectItems = projectsRes.data.length ? projectsRes.data.map((p) => ({
+  slug: p.slug,
+  title: p.title,
+  image: getStrapiMedia(p.image?.url),
+  bgColor: p.bgColor,
+})) : undefined;
+
+const experienceItems = experiencesRes.data.length ? experiencesRes.data.map((e) => ({
+  slug: e.slug,
+  role: e.role,
+  company: e.company,
+  duration: e.duration,
+  shortDescription: e.shortDescription,
+})) : undefined;
+
+const testimonialItems = testimonialsRes.data.length ? testimonialsRes.data.map((t) => ({
+  name: t.name,
+  role: t.role,
+  review: t.review,
+  image: getStrapiMedia(t.image?.url),
+})) : undefined;
+---
+
+<MainLayout title="Subhan Farrakh – AI Automation Engineer">
+  <IntroAnimation client:load />
+  <Hero shouldAnimate={true} client:load />
+  <About client:visible />
+  <Skills client:visible />
+  <Projects items={projectItems} client:visible />
+  <Experience items={experienceItems} client:visible />
+  <Testimonials items={testimonialItems} client:visible />
+  <ContactForm client:visible />
+  <FAQ client:visible />
+</MainLayout>
