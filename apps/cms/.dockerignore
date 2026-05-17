@@ -1,0 +1,15 @@
+.env
+.env.*
+node_modules
+.tmp
+.cache
+build
+dist
+*.log
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+scripts
+exports

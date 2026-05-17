@@ -23,6 +23,9 @@
     "uuid": "3f4265c5-5197-41f4-8847-700e99b756ee",
     "installId": "7332b8d4c1547bc2b7a0c2cc05267690ce2704d4ff60d2b4e3525c31fa5dcad1"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@swc/core", "core-js-pure", "esbuild", "sharp"]
+  },
   "dependencies": {
     "@strapi/admin": "^5.46.0",
     "@strapi/plugin-cloud": "^5.46.0",
