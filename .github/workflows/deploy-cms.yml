@@ -50,7 +50,7 @@ jobs:
             --update-secrets=CLOUDINARY_SECRET=STRAPI_CLOUDINARY_SECRET:latest \
             --update-secrets=DATABASE_HOST=STRAPI_DATABASE_HOST:latest \
             --update-secrets=DATABASE_PASSWORD=STRAPI_DATABASE_PASSWORD:latest \
-            --set-env-vars=HOST=0.0.0.0,NODE_ENV=production,DATABASE_CLIENT=postgres,DATABASE_PORT=5432,DATABASE_NAME=postgres,DATABASE_USERNAME=postgres,DATABASE_SSL=true,DATABASE_SSL_REJECT_UNAUTHORIZED=false \
+            --set-env-vars=HOST=0.0.0.0,NODE_ENV=production,DATABASE_CLIENT=postgres,DATABASE_PORT=5432,DATABASE_NAME=postgres,DATABASE_USERNAME=postgres,DATABASE_SSL=false,DATABASE_SSL_REJECT_UNAUTHORIZED=false \
             --port=1337 \
             --memory=2Gi \
             --cpu=1
