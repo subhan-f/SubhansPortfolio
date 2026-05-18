@@ -1,5 +1,5 @@
-FROM node:22-alpine AS base
-RUN apk update && apk upgrade --no-cache
+FROM node:22-slim AS base
+RUN apt-get update && apt-get upgrade -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN npm install -g pnpm@11.1.1
 
 # ── Build stage ────────────────────────────────────────────────────────────────
