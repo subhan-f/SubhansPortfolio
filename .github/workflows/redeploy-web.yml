@@ -1,0 +1,20 @@
+name: Redeploy Web on CMS Publish
+
+on:
+  repository_dispatch:
+    types: [cms-published]
+
+concurrency:
+  group: redeploy-web
+  cancel-in-progress: true
+
+jobs:
+  redeploy:
+    name: Debounce & trigger Vercel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for burst to settle (1 min debounce)
+        run: sleep 60
+
+      - name: Trigger Vercel deploy
+        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
